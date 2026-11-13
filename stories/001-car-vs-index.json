@@ -1,0 +1,56 @@
+{
+  "id": "car-vs-index",
+  "title": "Same salary. One bought a car, one invested $500/mo",
+  "voice": "nPczCjzI2devNBz1zQrb",
+  "characters": {
+    "mike": { "name": "MIKE", "color": "#E5484D" },
+    "jake": { "name": "JAKE", "color": "#2E8B57" }
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "Two friends. Same salary. Ten years later, one has $91,000... and the other has a used car.",
+      "props": { "title": "SAME SALARY", "left": "mike", "right": "jake", "rightValue": "$91,000", "leftValue": "USED CAR" }
+    },
+    {
+      "type": "buyCar",
+      "text": "Mike gets his first big paycheck and buys a brand new car. $650 a month, for six years.",
+      "props": { "who": "mike", "tag": "-$650/mo", "sub": "x 72 months" }
+    },
+    {
+      "type": "invest",
+      "text": "Jake keeps his old car. Instead, every month, he puts $500 into a simple index fund. Boring? Totally.",
+      "props": { "who": "jake", "tag": "+$500/mo", "stamp": "BORING" }
+    },
+    {
+      "type": "timeSkip",
+      "text": "Ten years pass.",
+      "props": { "from": 2026, "to": 2036, "label": "10 YEARS LATER" }
+    },
+    {
+      "type": "carResult",
+      "text": "Mike's car? Worth about $12,000 now. And he's still paying for gas and repairs.",
+      "props": { "who": "mike", "from": 42000, "to": 12000 }
+    },
+    {
+      "type": "investResult",
+      "text": "Jake's boring $500 a month? At an 8% average return, it grew to over $91,000.",
+      "props": { "who": "jake", "to": 91473 }
+    },
+    {
+      "type": "breakdown",
+      "text": "He only put in $60,000. The market added the other $31,000.",
+      "props": { "parts": [ { "label": "YOU PUT IN", "value": 60000, "color": "#3B82F6" }, { "label": "MARKET ADDED", "value": 31473, "color": "#22C55E" } ] }
+    },
+    {
+      "type": "lesson",
+      "text": "Same salary. Different first move. Pay yourself first, then spend what's left.",
+      "props": { "who": "jake", "line1": "PAY YOURSELF", "line2": "FIRST" }
+    },
+    {
+      "type": "cta",
+      "text": "Follow for a new money story every day.",
+      "props": { "who": "jake", "button": "FOLLOW", "disclaimer": "Educational story, not financial advice. Returns are not guaranteed." }
+    }
+  ]
+}
