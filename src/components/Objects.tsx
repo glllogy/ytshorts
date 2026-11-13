@@ -95,3 +95,66 @@ export const Jar: React.FC<{ x: number; y: number; fill: number; label?: string 
     </g>
   );
 };
+
+// Open wallet, origin = center
+export const Wallet: React.FC<{ x: number; y: number; scale?: number; open?: number }> = ({ x, y, scale = 1, open = 1 }) => (
+  <g transform={`translate(${x},${y}) scale(${scale})`}>
+    <ellipse cx={0} cy={150} rx={190} ry={16} fill="rgba(0,0,0,0.12)" />
+    <rect x={-180} y={-20} width={360} height={160} rx={22} fill="#8B5A2B" stroke={C.ink} strokeWidth={9} />
+    <g transform={`translate(0,-20) rotate(${-open * 28}, -180, 0)`}>
+      <rect x={-180} y={-110} width={360} height={110} rx={22} fill="#A0522D" stroke={C.ink} strokeWidth={9} />
+    </g>
+    <rect x={-150} y={10} width={300} height={22} rx={8} fill="#6B4423" />
+    <circle cx={140} cy={60} r={14} fill={C.yellow} stroke={C.ink} strokeWidth={5} />
+  </g>
+);
+
+export const Moth: React.FC<{ x: number; y: number; flap: number }> = ({ x, y, flap }) => {
+  const k = 0.4 + 0.6 * Math.abs(Math.sin(flap));
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <ellipse cx={-26 * k} cy={0} rx={30 * k} ry={22} fill="#C9C1B4" stroke={C.ink} strokeWidth={5} />
+      <ellipse cx={26 * k} cy={0} rx={30 * k} ry={22} fill="#C9C1B4" stroke={C.ink} strokeWidth={5} />
+      <ellipse cx={0} cy={0} rx={8} ry={24} fill={C.ink} />
+    </g>
+  );
+};
+
+// Old closed book, origin = center
+export const Book: React.FC<{ x: number; y: number; scale?: number; title: string; rot?: number }> = ({ x, y, scale = 1, title, rot = 0 }) => {
+  const words = title.split(" ");
+  const lines: string[] = [];
+  for (const w of words) {
+    const last = lines[lines.length - 1];
+    if (last && (last + " " + w).length <= 11) lines[lines.length - 1] = last + " " + w;
+    else lines.push(w);
+  }
+  return (
+    <g transform={`translate(${x},${y}) rotate(${rot}) scale(${scale})`}>
+      <ellipse cx={0} cy={270} rx={230} ry={20} fill="rgba(0,0,0,0.12)" />
+      <rect x={-200} y={-250} width={420} height={510} rx={14} fill="#F2E6C9" stroke={C.ink} strokeWidth={9} />
+      <rect x={-220} y={-260} width={420} height={510} rx={14} fill="#7A3E1D" stroke={C.ink} strokeWidth={9} />
+      <rect x={-195} y={-235} width={370} height={460} rx={8} fill="none" stroke="#D4A84B" strokeWidth={6} />
+      <rect x={-215} y={-260} width={36} height={510} fill="#5E2E14" />
+      {lines.map((l, i) => (
+        <text key={i} x={0} y={-120 + i * 70 - (lines.length - 3) * 35} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={54} fill="#E9C46A">
+          {l}
+        </text>
+      ))}
+      <g transform="translate(0,150)">
+        <path d="M-60,30 L-40,10 L-20,10 L-20,-10 L20,-10 L20,10 L40,10 L60,30 Z" fill="#E9C46A" />
+        <rect x={-10} y={-30} width={20} height={20} fill="#E9C46A" />
+      </g>
+    </g>
+  );
+};
+
+// Stepped ziggurat silhouette, origin = bottom center
+export const Ziggurat: React.FC<{ x: number; y: number; scale?: number; opacity?: number }> = ({ x, y, scale = 1, opacity = 1 }) => (
+  <g transform={`translate(${x},${y}) scale(${scale})`} opacity={opacity}>
+    {[0, 1, 2, 3].map((i) => (
+      <rect key={i} x={-300 + i * 60} y={-90 - i * 90} width={600 - i * 120} height={90} fill="#F1D29A" stroke="#E2B86A" strokeWidth={6} />
+    ))}
+    <rect x={-30} y={-360} width={60} height={360} fill="#E8C27E" />
+  </g>
+);

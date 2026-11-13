@@ -3,7 +3,8 @@ import { AbsoluteFill, interpolate, Sequence, staticFile, useCurrentFrame, useVi
 import { Audio } from "@remotion/media";
 import { C, FONT, GROUND_Y } from "./theme";
 import { mixPose, Mood, Pose, POSES, Stickman } from "./components/Stickman";
-import { Bill, Car, Coin, Jar } from "./components/Objects";
+import { Bill, Car, Coin, Jar, Wallet } from "./components/Objects";
+import { SCENES2 } from "./scenes2";
 import { ease, money, Stamp, Tag, Title, usePop, wordFrame } from "./components/ui";
 import type { SceneProps } from "./types";
 
@@ -14,7 +15,7 @@ export const Sfx: React.FC<{ at: number; name: string; volume?: number }> = ({ a
   </Sequence>
 );
 
-const usePoseTrack = (track: [number, keyof typeof POSES | Pose][]): Pose => {
+export const usePoseTrack = (track: [number, keyof typeof POSES | Pose][]): Pose => {
   const frame = useCurrentFrame();
   const get = (p: keyof typeof POSES | Pose) => (typeof p === "string" ? POSES[p] : p);
   let pose = get(track[0][1]);
@@ -25,24 +26,24 @@ const usePoseTrack = (track: [number, keyof typeof POSES | Pose][]): Pose => {
   return pose;
 };
 
-const moodAt = (frame: number, track: [number, Mood][]): Mood => {
+export const moodAt = (frame: number, track: [number, Mood][]): Mood => {
   let m = track[0][1];
   for (const [at, mood] of track) if (frame >= at) m = mood;
   return m;
 };
 
-const useWords = (scene: SceneProps["scene"]) => {
+export const useWords = (scene: SceneProps["scene"]) => {
   const { fps } = useVideoConfig();
   return (m: string, fallback = 0, nth = 0) => wordFrame(scene.words, m, fps, fallback, nth);
 };
 
-const Svg: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+export const Svg: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <svg width={1080} height={1920} style={{ position: "absolute", inset: 0 }}>
     {children}
   </svg>
 );
 
-const Ground = () => <line x1={-50} x2={1130} y1={GROUND_Y + 6} y2={GROUND_Y + 6} stroke={C.ink} strokeWidth={6} opacity={0.15} />;
+export const Ground = () => <line x1={-50} x2={1130} y1={GROUND_Y + 6} y2={GROUND_Y + 6} stroke={C.ink} strokeWidth={6} opacity={0.15} />;
 
 // ---------- scenes ----------
 const Hook: React.FC<SceneProps> = ({ scene, characters }) => {
@@ -194,7 +195,9 @@ const InvestResult: React.FC<SceneProps> = ({ scene, characters }) => {
   const frame = useCurrentFrame();
   const w = useWords(scene);
   const ch = characters[scene.props.who];
-  const t8 = w("8%", 60), tGrew = w("grew", 110), tEnd = w("$91", tGrew + 20);
+  const { endWord = "$91", rateWord = "8%", startWord, label = "JAKE'S FUND", rateLabel = "~8% / year" } = scene.props;
+  const tEnd0 = w(endWord, 60);
+  const t8 = w(rateWord, 60), tGrew = startWord ? w(startWord, 110) : Math.max(10, tEnd0 - 20), tEnd = w(endWord, tGrew + 20);
   const val = ease(frame, tGrew - 10, tEnd + 18, 0, scene.props.to);
   const pose = usePoseTrack([[0, "idle"], [t8, "pointUp"], [tEnd + 10, "cheer"]]);
   // growth curve
@@ -220,10 +223,10 @@ const InvestResult: React.FC<SceneProps> = ({ scene, characters }) => {
           })}
       </Svg>
       <div style={{ position: "absolute", top: 220, left: 0, right: 0, textAlign: "center", fontFamily: FONT, fontWeight: 900 }}>
-        <div style={{ fontSize: 56, color: C.gray }}>JAKE'S FUND</div>
+        <div style={{ fontSize: 56, color: C.gray }}>{label}</div>
         <div style={{ fontSize: 160, color: C.green, letterSpacing: -4, scale: String(frame > tEnd + 18 ? 1 + 0.06 * Math.sin((frame - tEnd) / 3) : 1) }}>{money(val)}</div>
       </div>
-      <Tag x={760} y={1060} at={t8} text="~8% / year" bg="#fff" color={C.ink} size={52} />
+      <Tag x={760} y={1060} at={t8} text={rateLabel} bg="#fff" color={C.ink} size={52} />
       <Sfx at={tGrew - 10} name="whoosh" />
       <Sfx at={tEnd + 18} name="ding" volume={0.8} />
     </AbsoluteFill>
@@ -269,7 +272,8 @@ const Lesson: React.FC<SceneProps> = ({ scene, characters }) => {
   const frame = useCurrentFrame();
   const w = useWords(scene);
   const ch = characters[scene.props.who];
-  const tPay = w("pay", 70);
+  const tPay = w(scene.props.switchWord ?? "pay", 70, scene.props.switchNth ?? 0);
+  const line2Size = Math.min(150, Math.floor(820 / (String(scene.props.line2).length * 0.75)));
   const pose = usePoseTrack([[0, "idle"], [tPay, "pointUp"]]);
   const vsOut = ease(frame, tPay - 4, tPay + 4, 1, 0);
   const chars = Object.values(characters);
@@ -279,7 +283,7 @@ const Lesson: React.FC<SceneProps> = ({ scene, characters }) => {
       {frame < tPay + 4 && (
         <div style={{ position: "absolute", inset: 0, opacity: vsOut }}>
           <Svg>
-            <Car x={290} y={760} scale={0.55} color={chars[0].color} />
+            {scene.props.vs === "wallet" ? <Wallet x={290} y={760} scale={0.8} /> : <Car x={290} y={760} scale={0.55} color={chars[0].color} />}
             <Jar x={790} y={800} fill={0.85} />
             <Stickman x={290} y={GROUND_Y} pose={POSES.idle} color={chars[0].color} name={chars[0].name} />
             <Stickman x={790} y={GROUND_Y} pose={POSES.idle} color={chars[1].color} name={chars[1].name} mood="happy" />
@@ -291,7 +295,7 @@ const Lesson: React.FC<SceneProps> = ({ scene, characters }) => {
         <>
           <Title text={scene.props.line1} at={tPay} y={220} size={120} />
           <div style={{ position: "absolute", left: 0, right: 0, top: 360, display: "flex", justifyContent: "center" }}>
-            <div style={{ background: C.yellow, border: `8px solid ${C.ink}`, borderRadius: 24, padding: "10px 50px", fontFamily: FONT, fontWeight: 900, fontSize: 150, color: C.ink, rotate: "-3deg", scale: String(sLine2) }}>
+            <div style={{ background: C.yellow, border: `8px solid ${C.ink}`, borderRadius: 24, padding: "10px 50px", fontFamily: FONT, fontWeight: 900, fontSize: line2Size, color: C.ink, rotate: "-3deg", whiteSpace: "nowrap", scale: String(sLine2) }}>
               {scene.props.line2}
             </div>
           </div>
@@ -338,4 +342,5 @@ export const SCENES: Record<string, React.FC<SceneProps>> = {
   breakdown: Breakdown,
   lesson: Lesson,
   cta: Cta,
+  ...SCENES2,
 };

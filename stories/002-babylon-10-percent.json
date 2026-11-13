@@ -1,0 +1,80 @@
+{
+  "id": "babylon-10-percent",
+  "title": "The 10% rule from a 100-year-old book",
+  "voice": "nPczCjzI2devNBz1zQrb",
+  "characters": {
+    "mike": { "name": "MIKE", "color": "#E5484D" },
+    "jake": { "name": "JAKE", "color": "#2E8B57" }
+  },
+  "scenes": [
+    {
+      "type": "bookHook",
+      "text": "A 100-year-old book about ancient Babylon has one money rule that most people still get wrong.",
+      "props": { "bookTitle": "THE RICHEST MAN IN BABYLON", "year": "1926", "title": "1 MONEY RULE" }
+    },
+    {
+      "type": "payday",
+      "text": "Mike and Jake both get paid $3,000.",
+      "props": { "left": "mike", "right": "jake", "amount": "$3,000" }
+    },
+    {
+      "type": "spendAll",
+      "text": "Mike pays rent, bills, a new phone, dinners out... and plans to save whatever is left.",
+      "props": {
+        "who": "mike", "start": 3000,
+        "items": [
+          { "word": "rent", "label": "RENT", "amount": 1200 },
+          { "word": "bills", "label": "BILLS", "amount": 600 },
+          { "word": "phone", "label": "PHONE", "amount": 500 },
+          { "word": "dinners", "label": "DINNERS", "amount": 700 }
+        ],
+        "thought": "SAVE LATER"
+      }
+    },
+    {
+      "type": "emptyWallet",
+      "text": "End of the month? Nothing is left. Every single time.",
+      "props": { "who": "mike" }
+    },
+    {
+      "type": "tenPercent",
+      "text": "Jake follows the book's first rule: a part of all you earn is yours to keep. Before paying anyone, he moves 10%, $300, to himself.",
+      "props": { "who": "jake", "quote": "\"A part of all you earn is yours to keep.\"", "tag": "$300 → JAKE" }
+    },
+    {
+      "type": "pie",
+      "text": "He lives on the other 90%. Honestly, he barely notices.",
+      "props": { "who": "jake", "big": 90, "bigLabel": "LIFE", "small": 10, "smallLabel": "JAKE" }
+    },
+    {
+      "type": "goldWorks",
+      "text": "Then rule two: make your gold work for you. He invests it, and the earnings start earning too.",
+      "props": { "who": "jake", "title": "RULE #2", "sub": "MAKE GOLD WORK" }
+    },
+    {
+      "type": "timeSkip",
+      "text": "Five years later...",
+      "props": { "from": 2026, "to": 2031, "label": "5 YEARS LATER" }
+    },
+    {
+      "type": "investResult",
+      "text": "Jake has over $21,000 working for him, at about 7% a year.",
+      "props": { "who": "jake", "to": 21478, "label": "JAKE'S GOLD", "endWord": "$21", "rateWord": "7%", "rateLabel": "~7% / year" }
+    },
+    {
+      "type": "compareBars",
+      "text": "Mike? Still waiting for something to be left over.",
+      "props": { "bars": [ { "who": "mike", "value": 0 }, { "who": "jake", "value": 21478 } ] }
+    },
+    {
+      "type": "lesson",
+      "text": "Don't save what's left after spending. Spend what's left after saving.",
+      "props": { "who": "jake", "line1": "SAVE FIRST", "line2": "SPEND AFTER", "switchWord": "spend", "switchNth": 1, "vs": "wallet" }
+    },
+    {
+      "type": "cta",
+      "text": "Follow for more lessons from the richest man in Babylon.",
+      "props": { "who": "jake", "button": "FOLLOW", "disclaimer": "Educational story, not financial advice. Returns are not guaranteed." }
+    }
+  ]
+}
