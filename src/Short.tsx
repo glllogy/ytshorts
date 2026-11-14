@@ -20,8 +20,8 @@ const Background: React.FC = () => {
 };
 
 // Each scene: whip-zoom in + slow camera push
-const SceneShell: React.FC<{ scene: SceneData; children: React.ReactNode }> = ({ scene, children }) => {
-  const frame = useCurrentFrame();
+const SceneShell: React.FC<{ scene: SceneData; children: React.ReactNode; first?: boolean }> = ({ scene, children, first }) => {
+  const frame = useCurrentFrame() + (first ? 20 : 0);
   const enter = interpolate(frame, [0, 8], [1.18, 1], { extrapolateRight: "clamp", easing: (t) => 1 - Math.pow(1 - t, 3) });
   const push = interpolate(frame, [0, scene.durationInFrames], [1, 1.05]);
   const blur = interpolate(frame, [0, 6], [10, 0], { extrapolateRight: "clamp" });
@@ -41,7 +41,7 @@ export const Short: React.FC<Timeline> = (t) => {
         const Comp = SCENES[sc.type];
         return (
           <Sequence key={i} from={sc.from} durationInFrames={sc.durationInFrames} name={`${i + 1}. ${sc.type}`}>
-            <SceneShell scene={sc}>{Comp ? <Comp scene={sc} characters={t.characters} /> : null}</SceneShell>
+            <SceneShell scene={sc} first={i === 0}>{Comp ? <Comp scene={sc} characters={t.characters} /> : null}</SceneShell>
             <Audio src={staticFile(sc.audio)} />
           </Sequence>
         );

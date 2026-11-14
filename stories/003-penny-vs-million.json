@@ -1,0 +1,61 @@
+{
+  "id": "penny-vs-million",
+  "title": "$1,000,000 now or a penny that doubles for 30 days?",
+  "voice": "nPczCjzI2devNBz1zQrb",
+  "characters": {
+    "mike": { "name": "MIKE", "color": "#E5484D" },
+    "jake": { "name": "JAKE", "color": "#2E8B57" }
+  },
+  "scenes": [
+    {
+      "type": "choiceHook",
+      "text": "One million dollars right now, or one penny that doubles every day for 30 days. Which one are you taking?",
+      "props": { "left": "$1,000,000", "leftSub": "RIGHT NOW", "right": "1¢", "rightSub": "x2 EVERY DAY", "question": "WHICH ONE?" }
+    },
+    {
+      "type": "pick",
+      "text": "Mike grabs the million in one second. Jake takes the penny. Mike can't stop laughing.",
+      "props": { "rich": "mike", "poor": "jake", "laugh": "HA HA HA" }
+    },
+    {
+      "type": "doubling",
+      "text": "Day 10. Jake has $5.12.",
+      "props": { "fromDay": 1, "toDay": 10, "mike": ["cheer", "happy"], "jake": ["idle", "neutral"], "mikeSays": "LOL", "mikeSaysWord": "$5" }
+    },
+    {
+      "type": "doubling",
+      "text": "Day 20. $5,242. Mike is still laughing.",
+      "props": { "fromDay": 10, "toDay": 20, "mike": ["pointRight", "happy"], "jake": ["shrug", "neutral"], "mikeSays": "HA HA", "mikeSaysWord": "laughing" }
+    },
+    {
+      "type": "doubling",
+      "text": "Day 27. $671,000. Mike stops laughing.",
+      "props": { "fromDay": 20, "toDay": 27, "mike": ["idle", "shock"], "jake": ["idle", "smug"], "moodWord": "stops" }
+    },
+    {
+      "type": "doubling",
+      "text": "Day 28. $1.3 million. Jake just passed him.",
+      "props": { "fromDay": 27, "toDay": 28, "mike": ["sad", "sad"], "jake": ["pointUp", "happy"], "stamp": "PASSED", "stampWord": "passed" }
+    },
+    {
+      "type": "doubling",
+      "text": "And on day 30? $5,368,709.",
+      "props": { "fromDay": 28, "toDay": 30, "mike": ["facepalm", "sad"], "jake": ["cheer", "happy"], "rain": true }
+    },
+    {
+      "type": "breakdown",
+      "text": "Here's the crazy part. Half of that money showed up on the very last day.",
+      "props": { "aWord": "half", "bWord": "last", "parts": [ { "label": "DAYS 1-29", "value": 2684354.56, "color": "#3B82F6" }, { "label": "DAY 30 ALONE", "value": 2684354.56, "color": "#22C55E" } ] }
+    },
+    {
+      "type": "lesson",
+      "text": "That's compounding. Slow, boring, then sudden. And most people quit on day 20.",
+      "props": { "who": "jake", "line1": "DON'T QUIT", "line2": "ON DAY 20", "switchWord": "most", "vs": "curve" }
+    },
+    {
+      "type": "cta",
+      "text": "Follow for more money stories, and don't quit on day 20.",
+      "props": { "who": "jake", "button": "FOLLOW", "disclaimer": "A thought experiment: real investments don't double daily. Not financial advice." }
+    }
+  ]
+}

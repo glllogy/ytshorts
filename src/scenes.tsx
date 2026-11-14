@@ -5,6 +5,7 @@ import { C, FONT, GROUND_Y } from "./theme";
 import { mixPose, Mood, Pose, POSES, Stickman } from "./components/Stickman";
 import { Bill, Car, Coin, Jar, Wallet } from "./components/Objects";
 import { SCENES2 } from "./scenes2";
+import { SCENES3 } from "./scenes3";
 import { ease, money, Stamp, Tag, Title, usePop, wordFrame } from "./components/ui";
 import type { SceneProps } from "./types";
 
@@ -233,11 +234,13 @@ const InvestResult: React.FC<SceneProps> = ({ scene, characters }) => {
   );
 };
 
+const fitSize = (t: string) => Math.min(110, Math.floor(540 / (t.length * 0.66)));
+
 const Breakdown: React.FC<SceneProps> = ({ scene }) => {
   const frame = useCurrentFrame();
   const w = useWords(scene);
   const [a, b] = scene.props.parts as { label: string; value: number; color: string }[];
-  const tA = w("$60", 15), tB = w("market", 60);
+  const tA = w(scene.props.aWord ?? "$60", 15), tB = w(scene.props.bWord ?? "market", 60);
   const total = a.value + b.value;
   const sB = usePop(tB);
   const H = 820, base = GROUND_Y, bx = 640, bw = 280;
@@ -253,13 +256,13 @@ const Breakdown: React.FC<SceneProps> = ({ scene }) => {
       {frame >= tA && (
         <div style={{ position: "absolute", left: 80, top: base - hA / 2 - 80, width: 520, textAlign: "right", fontFamily: FONT, fontWeight: 900 }}>
           <div style={{ fontSize: 46, color: C.gray }}>{a.label}</div>
-          <div style={{ fontSize: 110, color: a.color, letterSpacing: -3 }}>{money(a.value)}</div>
+          <div style={{ fontSize: fitSize(money(a.value)), color: a.color, letterSpacing: -3 }}>{money(a.value)}</div>
         </div>
       )}
       {frame >= tB && (
         <div style={{ position: "absolute", left: 80, top: base - hA - hB / 2 - 80, width: 520, textAlign: "right", fontFamily: FONT, fontWeight: 900, scale: String(sB) }}>
           <div style={{ fontSize: 46, color: C.gray }}>{b.label}</div>
-          <div style={{ fontSize: 110, color: b.color, letterSpacing: -3 }}>+{money(b.value)}</div>
+          <div style={{ fontSize: fitSize("+" + money(b.value)), color: b.color, letterSpacing: -3 }}>+{money(b.value)}</div>
         </div>
       )}
       <Sfx at={tA} name="pop" />
@@ -280,7 +283,12 @@ const Lesson: React.FC<SceneProps> = ({ scene, characters }) => {
   const sLine2 = usePop(tPay + 8);
   return (
     <AbsoluteFill>
-      {frame < tPay + 4 && (
+      {frame < tPay + 4 && scene.props.vs === "curve" && (
+        <div style={{ position: "absolute", inset: 0, opacity: vsOut }}>
+          <CurveExplainer words={scene.words} />
+        </div>
+      )}
+      {frame < tPay + 4 && scene.props.vs !== "curve" && (
         <div style={{ position: "absolute", inset: 0, opacity: vsOut }}>
           <Svg>
             {scene.props.vs === "wallet" ? <Wallet x={290} y={760} scale={0.8} /> : <Car x={290} y={760} scale={0.55} color={chars[0].color} />}
@@ -308,6 +316,37 @@ const Lesson: React.FC<SceneProps> = ({ scene, characters }) => {
       <Sfx at={tPay} name="whoosh" />
       <Sfx at={tPay + 8} name="thud" />
     </AbsoluteFill>
+  );
+};
+
+const CurveExplainer: React.FC<{ words: SceneProps["scene"]["words"] }> = ({ words }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const at = (m: string, f: number) => wordFrame(words, m, fps, f);
+  const tSlow = at("slow", 30), tBor = at("boring", 60), tSud = at("sudden", 85);
+  const prog = ease(frame, 4, tSud + 10, 0, 1);
+  const N = 60;
+  const pts = Array.from({ length: Math.max(2, Math.round(prog * N) + 1) }, (_, i) => {
+    const x = i / N;
+    return [140 + x * 800, 1050 - (Math.pow(2, x * 12) - 1) / (Math.pow(2, 12) - 1) * 700];
+  });
+  const last = pts[pts.length - 1];
+  return (
+    <>
+      <Title text="COMPOUNDING" at={0} y={220} size={110} color="#2E8B57" />
+      <Svg>
+        <line x1={140} y1={1050} x2={960} y2={1050} stroke={C.ink} strokeWidth={8} />
+        <line x1={140} y1={1050} x2={140} y2={330} stroke={C.ink} strokeWidth={8} />
+        <polyline points={pts.map((p) => p.join(",")).join(" ")} fill="none" stroke={C.green} strokeWidth={18} strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx={last[0]} cy={last[1]} r={22} fill={C.green} stroke={C.ink} strokeWidth={6} />
+      </Svg>
+      <Tag x={330} y={960} at={tSlow} text="SLOW" bg="#fff" color={C.ink} size={56} />
+      <Tag x={620} y={890} at={tBor} text="BORING" bg="#fff" color={C.ink} size={56} rotate={-3} />
+      <Tag x={720} y={420} at={tSud} text="SUDDEN!" bg={C.green} size={76} rotate={-6} />
+      <Sfx at={tSlow} name="pop" />
+      <Sfx at={tBor} name="pop" />
+      <Sfx at={tSud} name="ding" />
+    </>
   );
 };
 
@@ -343,4 +382,5 @@ export const SCENES: Record<string, React.FC<SceneProps>> = {
   lesson: Lesson,
   cta: Cta,
   ...SCENES2,
+  ...SCENES3,
 };
