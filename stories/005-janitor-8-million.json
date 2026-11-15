@@ -1,0 +1,57 @@
+{
+  "id": "janitor-8-million",
+  "title": "Everyone thought he was broke. Then they read his will.",
+  "voice": "nPczCjzI2devNBz1zQrb",
+  "characters": {
+    "ron": { "name": "RONALD", "color": "#6B7280" },
+    "mike": { "name": "MIKE", "color": "#E5484D" },
+    "jake": { "name": "JAKE", "color": "#2E8B57" }
+  },
+  "scenes": [
+    {
+      "type": "willHook",
+      "text": "Everyone in town thought this old man was broke. Then they read his will.",
+      "props": { "who": "ron", "rumors": ["BROKE?", "POOR GUY", "NO MONEY"], "doc": "LAST WILL" }
+    },
+    {
+      "type": "investResult",
+      "text": "Ronald Read, a janitor from Vermont, left behind almost $8 million.",
+      "props": { "who": "ron", "to": 8000000, "label": "RONALD'S FORTUNE", "startWord": "left", "endWord": "$8", "rateLabel": "" }
+    },
+    {
+      "type": "factsList",
+      "text": "He pumped gas for years. Then he swept floors. He drove a used car and cut his own firewood.",
+      "props": { "who": "ron", "title": "HIS LIFE", "facts": [
+        { "word": "pumped", "label": "PUMPED GAS" },
+        { "word": "swept", "label": "JANITOR" },
+        { "word": "used", "label": "USED CAR" },
+        { "word": "firewood", "label": "CUT OWN FIREWOOD" }
+      ] }
+    },
+    {
+      "type": "certStack",
+      "text": "His secret? He kept buying stock in big, boring companies he understood. And he almost never sold.",
+      "props": { "who": "ron", "title": "HIS SECRET", "buyWord": "buying", "holdWord": "never", "hold": "NEVER SOLD" }
+    },
+    {
+      "type": "goldWorks",
+      "text": "The dividends? He reinvested them. Year after year, for decades.",
+      "props": { "who": "ron", "title": "DIVIDENDS", "sub": "REINVESTED", "titleWord": "dividends", "genWords": ["dividends", "reinvested", "year", "decades"] }
+    },
+    {
+      "type": "breakdown",
+      "text": "When he died at 92, he gave most of it away. $4.8 million to the local hospital, and $1.2 million to the library.",
+      "props": { "aWord": "$4.8", "bWord": "$1.2", "noPlus": true, "parts": [ { "label": "HOSPITAL", "value": 4800000, "color": "#3B82F6" }, { "label": "LIBRARY", "value": 1200000, "color": "#22C55E" } ] }
+    },
+    {
+      "type": "lesson",
+      "text": "No big salary. No lucky bet. Just small amounts, held for a very long time.",
+      "props": { "who": "ron", "line1": "SMALL AMOUNTS", "line2": "LONG TIME", "switchWord": "just", "vs": "curve" }
+    },
+    {
+      "type": "cta",
+      "text": "Follow for more true money stories.",
+      "props": { "who": "jake", "button": "FOLLOW", "disclaimer": "Based on news reports about Ronald Read (1921-2014). Not financial advice." }
+    }
+  ]
+}

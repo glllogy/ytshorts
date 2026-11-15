@@ -112,7 +112,7 @@ export const Stickman: React.FC<{
       </g>
       {name && (
         <g transform={`translate(0,${headC[1] - HEAD_R - 52}) scale(${flip ? -1 : 1},1)`}>
-          <rect x={-78} y={-30} width={156} height={58} rx={29} fill={color} />
+          <rect x={-Math.max(78, name.length * 13 + 22)} y={-30} width={Math.max(156, name.length * 26 + 44)} height={58} rx={29} fill={color} />
           <text x={0} y={13} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={34} fill="#fff">
             {name}
           </text>

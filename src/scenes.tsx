@@ -7,6 +7,7 @@ import { Bill, Car, Coin, Jar, Wallet } from "./components/Objects";
 import { SCENES2 } from "./scenes2";
 import { SCENES3 } from "./scenes3";
 import { SCENES4 } from "./scenes4";
+import { SCENES5 } from "./scenes5";
 import { ease, money, Stamp, Tag, Title, usePop, wordFrame } from "./components/ui";
 import type { SceneProps } from "./types";
 
@@ -226,9 +227,9 @@ const InvestResult: React.FC<SceneProps> = ({ scene, characters }) => {
       </Svg>
       <div style={{ position: "absolute", top: 220, left: 0, right: 0, textAlign: "center", fontFamily: FONT, fontWeight: 900 }}>
         <div style={{ fontSize: 56, color: C.gray }}>{label}</div>
-        <div style={{ fontSize: 160, color: C.green, letterSpacing: -4, scale: String(frame > tEnd + 18 ? 1 + 0.06 * Math.sin((frame - tEnd) / 3) : 1) }}>{money(val)}</div>
+        <div style={{ fontSize: Math.min(160, Math.floor(1000 / (money(scene.props.to).length * 0.68))), color: C.green, letterSpacing: -4, scale: String(frame > tEnd + 18 ? 1 + 0.06 * Math.sin((frame - tEnd) / 3) : 1) }}>{money(val)}</div>
       </div>
-      <Tag x={760} y={1060} at={t8} text={rateLabel} bg="#fff" color={C.ink} size={52} />
+      {rateLabel ? <Tag x={760} y={1060} at={t8} text={rateLabel} bg="#fff" color={C.ink} size={52} /> : null}
       <Sfx at={tGrew - 10} name="whoosh" />
       <Sfx at={tEnd + 18} name="ding" volume={0.8} />
     </AbsoluteFill>
@@ -263,7 +264,7 @@ const Breakdown: React.FC<SceneProps> = ({ scene }) => {
       {frame >= tB && (
         <div style={{ position: "absolute", left: 80, top: base - hA - hB / 2 - 80, width: 520, textAlign: "right", fontFamily: FONT, fontWeight: 900, scale: String(sB) }}>
           <div style={{ fontSize: 46, color: C.gray }}>{b.label}</div>
-          <div style={{ fontSize: fitSize("+" + money(b.value)), color: b.color, letterSpacing: -3 }}>+{money(b.value)}</div>
+          <div style={{ fontSize: fitSize("+" + money(b.value)), color: b.color, letterSpacing: -3 }}>{scene.props.noPlus ? "" : "+"}{money(b.value)}</div>
         </div>
       )}
       <Sfx at={tA} name="pop" />
@@ -385,4 +386,5 @@ export const SCENES: Record<string, React.FC<SceneProps>> = {
   ...SCENES2,
   ...SCENES3,
   ...SCENES4,
+  ...SCENES5,
 };

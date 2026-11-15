@@ -57,7 +57,7 @@ export const Title: React.FC<{ text: string; at?: number; y?: number; color?: st
   );
 };
 
-export const Stamp: React.FC<{ x: number; y: number; at: number; text: string; color?: string }> = ({ x, y, at, text, color = C.red }) => {
+export const Stamp: React.FC<{ x: number; y: number; at: number; text: string; color?: string; size?: number }> = ({ x, y, at, text, color = C.red, size = 110 }) => {
   const frame = useCurrentFrame();
   if (frame < at) return null;
   const k = ease(frame, at, at + 6, 2.2, 1);
@@ -66,7 +66,7 @@ export const Stamp: React.FC<{ x: number; y: number; at: number; text: string; c
       style={{
         position: "absolute", left: x, top: y, translate: "-50% -50%", scale: String(k), rotate: "-12deg",
         opacity: ease(frame, at, at + 3, 0, 1), border: `10px solid ${color}`, color, padding: "6px 34px",
-        borderRadius: 18, fontFamily: FONT, fontWeight: 900, fontSize: 110, letterSpacing: 4, background: "rgba(255,255,255,0.85)",
+        borderRadius: 18, fontFamily: FONT, fontWeight: 900, fontSize: size, letterSpacing: 4, background: "rgba(255,255,255,0.85)", whiteSpace: "nowrap",
       }}
     >
       {text}

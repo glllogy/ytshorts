@@ -234,7 +234,11 @@ const GoldWorks: React.FC<SceneProps> = ({ scene, characters }) => {
   const frame = useCurrentFrame();
   const w = useWords(scene);
   const ch = characters[scene.props.who];
-  const tRule = w("rule", 6), tGold = w("gold", 30), tInv = w("invests", 80), tE1 = w("earnings", 110), tE2 = w("earning", 140, 1);
+  const gw: string[] | undefined = scene.props.genWords;
+  const tRule = w(scene.props.titleWord ?? "rule", 6);
+  const [tGold, tInv, tE1, tE2] = gw
+    ? gw.map((x, i) => w(x, 10 + i * 30))
+    : [w("gold", 30), w("invests", 80), w("earnings", 110), w("earning", 140, 1)];
   const gens = [
     { at: tGold, n: 1, y: 560, r: 46, sp: 0 },
     { at: tInv, n: 2, y: 720, r: 38, sp: 280 },
