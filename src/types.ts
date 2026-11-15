@@ -14,6 +14,7 @@ export type Character = { name: string; color: string };
 
 export type Timeline = {
   id: string;
+  seq?: number;
   title: string;
   fps: number;
   characters: Record<string, Character>;

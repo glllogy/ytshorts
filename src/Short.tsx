@@ -3,21 +3,9 @@ import { AbsoluteFill, interpolate, Sequence, staticFile, useCurrentFrame } from
 import { Audio } from "@remotion/media";
 import { C } from "./theme";
 import { SCENES } from "./scenes";
+import { Background } from "./backgrounds";
 import { Captions } from "./components/Captions";
 import type { SceneData, Timeline } from "./types";
-
-const Background: React.FC = () => {
-  const frame = useCurrentFrame();
-  return (
-    <AbsoluteFill style={{ background: C.bg }}>
-      <svg width={1080} height={1920}>
-        <circle cx={160 + Math.sin(frame / 60) * 40} cy={420} r={260} fill="#FFE7B8" />
-        <circle cx={950 + Math.cos(frame / 70) * 40} cy={1000} r={320} fill="#FFE7B8" />
-        <circle cx={540} cy={1650} r={420} fill="#FFEFD0" />
-      </svg>
-    </AbsoluteFill>
-  );
-};
 
 // Each scene: whip-zoom in + slow camera push
 const SceneShell: React.FC<{ scene: SceneData; children: React.ReactNode; first?: boolean }> = ({ scene, children, first }) => {
@@ -36,7 +24,7 @@ const SceneShell: React.FC<{ scene: SceneData; children: React.ReactNode; first?
 export const Short: React.FC<Timeline> = (t) => {
   return (
     <AbsoluteFill style={{ background: C.bg, overflow: "hidden" }}>
-      <Background />
+      <Background seq={t.seq} />
       {t.scenes.map((sc, i) => {
         const Comp = SCENES[sc.type];
         return (
