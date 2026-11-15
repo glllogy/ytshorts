@@ -1,0 +1,60 @@
+{
+  "id": "black-friday-trap",
+  "title": "He saved $800 on Black Friday and got $1,200 poorer",
+  "voice": "nPczCjzI2devNBz1zQrb",
+  "characters": {
+    "mike": { "name": "MIKE", "color": "#E5484D" },
+    "jake": { "name": "JAKE", "color": "#2E8B57" }
+  },
+  "scenes": [
+    {
+      "type": "bfHook",
+      "text": "Mike saved $800 this Black Friday... and somehow ended up $1,200 poorer.",
+      "props": { "who": "mike", "saved": "SAVED $800", "loss": "-$1,200" }
+    },
+    {
+      "type": "cart",
+      "text": "A TV, 30% off. Headphones, half price. And a jacket he didn't even want... but hey, 70% off!",
+      "props": { "who": "mike", "items": [
+        { "word": "tv", "label": "TV", "off": "-30%" },
+        { "word": "headphones", "label": "HEADPHONES", "off": "-50%" },
+        { "word": "jacket", "label": "JACKET", "off": "-70%" }
+      ] }
+    },
+    {
+      "type": "receipt",
+      "text": "Total: $1,200, down from $2,000. Mike tells everyone he saved $800.",
+      "props": { "who": "mike", "lines": [ ["TV", 945, 1350], ["HEADPHONES", 150, 300], ["JACKET", 105, 350] ], "total": 1200, "was": 2000, "saved": "YOU SAVED $800!" }
+    },
+    {
+      "type": "flip",
+      "text": "But he wasn't planning to buy any of it. He didn't save $800. He spent $1,200.",
+      "props": { "who": "mike", "from": "SAVED $800", "to": "SPENT $1,200", "strikeWord": "didn't", "toWord": "spent" }
+    },
+    {
+      "type": "payments",
+      "text": "And he paid with buy now, pay later. Four easy payments. He missed one, and the late fees kicked in.",
+      "props": { "who": "mike", "count": 4, "amount": "$300", "missIndex": 2, "fee": "+ LATE FEE" }
+    },
+    {
+      "type": "shoppingList",
+      "text": "Jake had a list. One thing he actually needed: winter boots, $150. Paid in cash.",
+      "props": { "who": "jake", "item": "WINTER BOOTS", "price": "$150", "paid": "PAID IN CASH" }
+    },
+    {
+      "type": "investResult",
+      "text": "The $1,050 he didn't spend? Invested. In 10 years at 8%, that's about $2,267.",
+      "props": { "who": "jake", "to": 2267, "label": "JAKE'S $1,050", "startWord": "invested", "endWord": "$2,267", "rateWord": "8%", "rateLabel": "~8% / year" }
+    },
+    {
+      "type": "lesson",
+      "text": "If it wasn't on your list, a discount isn't saving. It's just spending.",
+      "props": { "who": "jake", "line1": "NOT ON THE LIST?", "line2": "NOT A DEAL", "switchWord": "discount", "vs": "wallet" }
+    },
+    {
+      "type": "cta",
+      "text": "Follow, and don't let Black Friday shop for you.",
+      "props": { "who": "jake", "button": "FOLLOW", "disclaimer": "Educational story, not financial advice. Returns are not guaranteed." }
+    }
+  ]
+}

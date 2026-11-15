@@ -6,6 +6,7 @@ import { mixPose, Mood, Pose, POSES, Stickman } from "./components/Stickman";
 import { Bill, Car, Coin, Jar, Wallet } from "./components/Objects";
 import { SCENES2 } from "./scenes2";
 import { SCENES3 } from "./scenes3";
+import { SCENES4 } from "./scenes4";
 import { ease, money, Stamp, Tag, Title, usePop, wordFrame } from "./components/ui";
 import type { SceneProps } from "./types";
 
@@ -301,7 +302,7 @@ const Lesson: React.FC<SceneProps> = ({ scene, characters }) => {
       )}
       {frame >= tPay && (
         <>
-          <Title text={scene.props.line1} at={tPay} y={220} size={120} />
+          <Title text={scene.props.line1} at={tPay} y={220} size={Math.min(120, Math.floor(940 / (String(scene.props.line1).length * 0.72)))} />
           <div style={{ position: "absolute", left: 0, right: 0, top: 360, display: "flex", justifyContent: "center" }}>
             <div style={{ background: C.yellow, border: `8px solid ${C.ink}`, borderRadius: 24, padding: "10px 50px", fontFamily: FONT, fontWeight: 900, fontSize: line2Size, color: C.ink, rotate: "-3deg", whiteSpace: "nowrap", scale: String(sLine2) }}>
               {scene.props.line2}
@@ -383,4 +384,5 @@ export const SCENES: Record<string, React.FC<SceneProps>> = {
   cta: Cta,
   ...SCENES2,
   ...SCENES3,
+  ...SCENES4,
 };

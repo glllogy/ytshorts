@@ -1,0 +1,828 @@
+{
+ "id": "black-friday-trap",
+ "title": "He saved $800 on Black Friday and got $1,200 poorer",
+ "fps": 30,
+ "characters": {
+  "mike": {
+   "name": "MIKE",
+   "color": "#E5484D"
+  },
+  "jake": {
+   "name": "JAKE",
+   "color": "#2E8B57"
+  }
+ },
+ "durationInFrames": 1661,
+ "scenes": [
+  {
+   "type": "bfHook",
+   "props": {
+    "who": "mike",
+    "saved": "SAVED $800",
+    "loss": "-$1,200"
+   },
+   "text": "Mike saved $800 this Black Friday... and somehow ended up $1,200 poorer.",
+   "audio": "black-friday-trap/s01-cab45cff26.mp3",
+   "from": 0,
+   "durationInFrames": 167,
+   "words": [
+    {
+     "text": "Mike",
+     "start": 0.0,
+     "end": 0.279
+    },
+    {
+     "text": "saved",
+     "start": 0.313,
+     "end": 0.534
+    },
+    {
+     "text": "$800",
+     "start": 0.557,
+     "end": 1.161
+    },
+    {
+     "text": "this",
+     "start": 1.219,
+     "end": 1.335
+    },
+    {
+     "text": "Black",
+     "start": 1.37,
+     "end": 1.556
+    },
+    {
+     "text": "Friday...",
+     "start": 1.591,
+     "end": 2.043
+    },
+    {
+     "text": "and",
+     "start": 2.403,
+     "end": 2.554
+    },
+    {
+     "text": "somehow",
+     "start": 2.624,
+     "end": 2.995
+    },
+    {
+     "text": "ended",
+     "start": 3.1,
+     "end": 3.332
+    },
+    {
+     "text": "up",
+     "start": 3.379,
+     "end": 3.471
+    },
+    {
+     "text": "$1,200",
+     "start": 3.553,
+     "end": 4.458
+    },
+    {
+     "text": "poorer.",
+     "start": 4.528,
+     "end": 5.294
+    }
+   ]
+  },
+  {
+   "type": "cart",
+   "props": {
+    "who": "mike",
+    "items": [
+     {
+      "word": "tv",
+      "label": "TV",
+      "off": "-30%"
+     },
+     {
+      "word": "headphones",
+      "label": "HEADPHONES",
+      "off": "-50%"
+     },
+     {
+      "word": "jacket",
+      "label": "JACKET",
+      "off": "-70%"
+     }
+    ]
+   },
+   "text": "A TV, 30% off. Headphones, half price. And a jacket he didn't even want... but hey, 70% off!",
+   "audio": "black-friday-trap/s02-362a843252.mp3",
+   "from": 167,
+   "durationInFrames": 226,
+   "words": [
+    {
+     "text": "A",
+     "start": 0.0,
+     "end": 0.093
+    },
+    {
+     "text": "TV,",
+     "start": 0.163,
+     "end": 0.627
+    },
+    {
+     "text": "30%",
+     "start": 0.685,
+     "end": 1.207
+    },
+    {
+     "text": "off.",
+     "start": 1.312,
+     "end": 1.567
+    },
+    {
+     "text": "Headphones,",
+     "start": 1.869,
+     "end": 2.438
+    },
+    {
+     "text": "half",
+     "start": 2.496,
+     "end": 2.67
+    },
+    {
+     "text": "price.",
+     "start": 2.74,
+     "end": 3.193
+    },
+    {
+     "text": "And",
+     "start": 3.413,
+     "end": 3.553
+    },
+    {
+     "text": "a",
+     "start": 3.599,
+     "end": 3.634
+    },
+    {
+     "text": "jacket",
+     "start": 3.704,
+     "end": 4.063
+    },
+    {
+     "text": "he",
+     "start": 4.11,
+     "end": 4.168
+    },
+    {
+     "text": "didn't",
+     "start": 4.226,
+     "end": 4.412
+    },
+    {
+     "text": "even",
+     "start": 4.435,
+     "end": 4.621
+    },
+    {
+     "text": "want...",
+     "start": 4.69,
+     "end": 5.062
+    },
+    {
+     "text": "but",
+     "start": 5.364,
+     "end": 5.526
+    },
+    {
+     "text": "hey,",
+     "start": 5.573,
+     "end": 5.793
+    },
+    {
+     "text": "70%",
+     "start": 5.863,
+     "end": 6.444
+    },
+    {
+     "text": "off!",
+     "start": 6.548,
+     "end": 7.245
+    }
+   ]
+  },
+  {
+   "type": "receipt",
+   "props": {
+    "who": "mike",
+    "lines": [
+     [
+      "TV",
+      945,
+      1350
+     ],
+     [
+      "HEADPHONES",
+      150,
+      300
+     ],
+     [
+      "JACKET",
+      105,
+      350
+     ]
+    ],
+    "total": 1200,
+    "was": 2000,
+    "saved": "YOU SAVED $800!"
+   },
+   "text": "Total: $1,200, down from $2,000. Mike tells everyone he saved $800.",
+   "audio": "black-friday-trap/s03-597ce534c1.mp3",
+   "from": 393,
+   "durationInFrames": 160,
+   "words": [
+    {
+     "text": "Total:",
+     "start": 0.0,
+     "end": 0.395
+    },
+    {
+     "text": "$1,200,",
+     "start": 0.418,
+     "end": 1.277
+    },
+    {
+     "text": "down",
+     "start": 1.324,
+     "end": 1.533
+    },
+    {
+     "text": "from",
+     "start": 1.579,
+     "end": 1.707
+    },
+    {
+     "text": "$2,000.",
+     "start": 1.765,
+     "end": 2.717
+    },
+    {
+     "text": "Mike",
+     "start": 2.763,
+     "end": 2.949
+    },
+    {
+     "text": "tells",
+     "start": 2.972,
+     "end": 3.17
+    },
+    {
+     "text": "everyone",
+     "start": 3.228,
+     "end": 3.529
+    },
+    {
+     "text": "he",
+     "start": 3.576,
+     "end": 3.634
+    },
+    {
+     "text": "saved",
+     "start": 3.692,
+     "end": 3.924
+    },
+    {
+     "text": "$800.",
+     "start": 3.959,
+     "end": 5.062
+    }
+   ]
+  },
+  {
+   "type": "flip",
+   "props": {
+    "who": "mike",
+    "from": "SAVED $800",
+    "to": "SPENT $1,200",
+    "strikeWord": "didn't",
+    "toWord": "spent"
+   },
+   "text": "But he wasn't planning to buy any of it. He didn't save $800. He spent $1,200.",
+   "audio": "black-friday-trap/s04-a7280736dd.mp3",
+   "from": 553,
+   "durationInFrames": 162,
+   "words": [
+    {
+     "text": "But",
+     "start": 0.0,
+     "end": 0.174
+    },
+    {
+     "text": "he",
+     "start": 0.209,
+     "end": 0.255
+    },
+    {
+     "text": "wasn't",
+     "start": 0.313,
+     "end": 0.557
+    },
+    {
+     "text": "planning",
+     "start": 0.592,
+     "end": 0.848
+    },
+    {
+     "text": "to",
+     "start": 0.871,
+     "end": 0.917
+    },
+    {
+     "text": "buy",
+     "start": 0.964,
+     "end": 1.138
+    },
+    {
+     "text": "any",
+     "start": 1.207,
+     "end": 1.347
+    },
+    {
+     "text": "of",
+     "start": 1.405,
+     "end": 1.451
+    },
+    {
+     "text": "it.",
+     "start": 1.509,
+     "end": 1.683
+    },
+    {
+     "text": "He",
+     "start": 1.939,
+     "end": 2.032
+    },
+    {
+     "text": "didn't",
+     "start": 2.09,
+     "end": 2.287
+    },
+    {
+     "text": "save",
+     "start": 2.322,
+     "end": 2.508
+    },
+    {
+     "text": "$800.",
+     "start": 2.531,
+     "end": 3.39
+    },
+    {
+     "text": "He",
+     "start": 3.437,
+     "end": 3.495
+    },
+    {
+     "text": "spent",
+     "start": 3.518,
+     "end": 3.738
+    },
+    {
+     "text": "$1,200.",
+     "start": 3.796,
+     "end": 5.108
+    }
+   ]
+  },
+  {
+   "type": "payments",
+   "props": {
+    "who": "mike",
+    "count": 4,
+    "amount": "$300",
+    "missIndex": 2,
+    "fee": "+ LATE FEE"
+   },
+   "text": "And he paid with buy now, pay later. Four easy payments. He missed one, and the late fees kicked in.",
+   "audio": "black-friday-trap/s05-222df8322c.mp3",
+   "from": 715,
+   "durationInFrames": 214,
+   "words": [
+    {
+     "text": "And",
+     "start": 0.0,
+     "end": 0.174
+    },
+    {
+     "text": "he",
+     "start": 0.221,
+     "end": 0.279
+    },
+    {
+     "text": "paid",
+     "start": 0.337,
+     "end": 0.546
+    },
+    {
+     "text": "with",
+     "start": 0.592,
+     "end": 0.72
+    },
+    {
+     "text": "buy",
+     "start": 0.766,
+     "end": 0.94
+    },
+    {
+     "text": "now,",
+     "start": 1.022,
+     "end": 1.44
+    },
+    {
+     "text": "pay",
+     "start": 1.66,
+     "end": 1.858
+    },
+    {
+     "text": "later.",
+     "start": 1.962,
+     "end": 2.345
+    },
+    {
+     "text": "Four",
+     "start": 2.485,
+     "end": 2.74
+    },
+    {
+     "text": "easy",
+     "start": 2.81,
+     "end": 3.019
+    },
+    {
+     "text": "payments.",
+     "start": 3.077,
+     "end": 3.599
+    },
+    {
+     "text": "He",
+     "start": 3.901,
+     "end": 4.017
+    },
+    {
+     "text": "missed",
+     "start": 4.087,
+     "end": 4.307
+    },
+    {
+     "text": "one,",
+     "start": 4.365,
+     "end": 4.714
+    },
+    {
+     "text": "and",
+     "start": 4.969,
+     "end": 5.12
+    },
+    {
+     "text": "the",
+     "start": 5.166,
+     "end": 5.236
+    },
+    {
+     "text": "late",
+     "start": 5.294,
+     "end": 5.492
+    },
+    {
+     "text": "fees",
+     "start": 5.526,
+     "end": 5.747
+    },
+    {
+     "text": "kicked",
+     "start": 5.805,
+     "end": 6.072
+    },
+    {
+     "text": "in.",
+     "start": 6.13,
+     "end": 6.827
+    }
+   ]
+  },
+  {
+   "type": "shoppingList",
+   "props": {
+    "who": "jake",
+    "item": "WINTER BOOTS",
+    "price": "$150",
+    "paid": "PAID IN CASH"
+   },
+   "text": "Jake had a list. One thing he actually needed: winter boots, $150. Paid in cash.",
+   "audio": "black-friday-trap/s06-4ebc516ba7.mp3",
+   "from": 929,
+   "durationInFrames": 212,
+   "words": [
+    {
+     "text": "Jake",
+     "start": 0.0,
+     "end": 0.29
+    },
+    {
+     "text": "had",
+     "start": 0.313,
+     "end": 0.43
+    },
+    {
+     "text": "a",
+     "start": 0.476,
+     "end": 0.499
+    },
+    {
+     "text": "list.",
+     "start": 0.557,
+     "end": 1.01
+    },
+    {
+     "text": "One",
+     "start": 1.416,
+     "end": 1.637
+    },
+    {
+     "text": "thing",
+     "start": 1.672,
+     "end": 1.823
+    },
+    {
+     "text": "he",
+     "start": 1.869,
+     "end": 1.916
+    },
+    {
+     "text": "actually",
+     "start": 1.985,
+     "end": 2.31
+    },
+    {
+     "text": "needed:",
+     "start": 2.357,
+     "end": 2.752
+    },
+    {
+     "text": "winter",
+     "start": 2.891,
+     "end": 3.204
+    },
+    {
+     "text": "boots,",
+     "start": 3.262,
+     "end": 3.715
+    },
+    {
+     "text": "$150.",
+     "start": 3.785,
+     "end": 4.876
+    },
+    {
+     "text": "Paid",
+     "start": 5.236,
+     "end": 5.445
+    },
+    {
+     "text": "in",
+     "start": 5.492,
+     "end": 5.561
+    },
+    {
+     "text": "cash.",
+     "start": 5.631,
+     "end": 6.78
+    }
+   ]
+  },
+  {
+   "type": "investResult",
+   "props": {
+    "who": "jake",
+    "to": 2267,
+    "label": "JAKE'S $1,050",
+    "startWord": "invested",
+    "endWord": "$2,267",
+    "rateWord": "8%",
+    "rateLabel": "~8% / year"
+   },
+   "text": "The $1,050 he didn't spend? Invested. In 10 years at 8%, that's about $2,267.",
+   "audio": "black-friday-trap/s07-f4806bb20d.mp3",
+   "from": 1141,
+   "durationInFrames": 251,
+   "words": [
+    {
+     "text": "The",
+     "start": 0.0,
+     "end": 0.151
+    },
+    {
+     "text": "$1,050",
+     "start": 0.209,
+     "end": 1.556
+    },
+    {
+     "text": "he",
+     "start": 1.695,
+     "end": 1.8
+    },
+    {
+     "text": "didn't",
+     "start": 1.858,
+     "end": 2.067
+    },
+    {
+     "text": "spend?",
+     "start": 2.101,
+     "end": 2.566
+    },
+    {
+     "text": "Invested.",
+     "start": 2.868,
+     "end": 3.599
+    },
+    {
+     "text": "In",
+     "start": 3.901,
+     "end": 4.029
+    },
+    {
+     "text": "10",
+     "start": 4.098,
+     "end": 4.307
+    },
+    {
+     "text": "years",
+     "start": 4.365,
+     "end": 4.598
+    },
+    {
+     "text": "at",
+     "start": 4.644,
+     "end": 4.714
+    },
+    {
+     "text": "8%,",
+     "start": 4.772,
+     "end": 5.317
+    },
+    {
+     "text": "that's",
+     "start": 5.341,
+     "end": 5.515
+    },
+    {
+     "text": "about",
+     "start": 5.538,
+     "end": 5.747
+    },
+    {
+     "text": "$2,267.",
+     "start": 5.782,
+     "end": 8.081
+    }
+   ]
+  },
+  {
+   "type": "lesson",
+   "props": {
+    "who": "jake",
+    "line1": "NOT ON THE LIST?",
+    "line2": "NOT A DEAL",
+    "switchWord": "discount",
+    "vs": "wallet"
+   },
+   "text": "If it wasn't on your list, a discount isn't saving. It's just spending.",
+   "audio": "black-friday-trap/s08-a51a437d53.mp3",
+   "from": 1392,
+   "durationInFrames": 148,
+   "words": [
+    {
+     "text": "If",
+     "start": 0.0,
+     "end": 0.174
+    },
+    {
+     "text": "it",
+     "start": 0.232,
+     "end": 0.302
+    },
+    {
+     "text": "wasn't",
+     "start": 0.348,
+     "end": 0.639
+    },
+    {
+     "text": "on",
+     "start": 0.673,
+     "end": 0.743
+    },
+    {
+     "text": "your",
+     "start": 0.789,
+     "end": 0.894
+    },
+    {
+     "text": "list,",
+     "start": 0.952,
+     "end": 1.312
+    },
+    {
+     "text": "a",
+     "start": 1.567,
+     "end": 1.637
+    },
+    {
+     "text": "discount",
+     "start": 1.707,
+     "end": 2.101
+    },
+    {
+     "text": "isn't",
+     "start": 2.136,
+     "end": 2.345
+    },
+    {
+     "text": "saving.",
+     "start": 2.38,
+     "end": 2.844
+    },
+    {
+     "text": "It's",
+     "start": 3.042,
+     "end": 3.239
+    },
+    {
+     "text": "just",
+     "start": 3.32,
+     "end": 3.529
+    },
+    {
+     "text": "spending.",
+     "start": 3.576,
+     "end": 4.644
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "props": {
+    "who": "jake",
+    "button": "FOLLOW",
+    "disclaimer": "Educational story, not financial advice. Returns are not guaranteed."
+   },
+   "text": "Follow, and don't let Black Friday shop for you.",
+   "audio": "black-friday-trap/s09-5c772604e7.mp3",
+   "from": 1540,
+   "durationInFrames": 91,
+   "words": [
+    {
+     "text": "Follow,",
+     "start": 0.0,
+     "end": 0.569
+    },
+    {
+     "text": "and",
+     "start": 0.604,
+     "end": 0.708
+    },
+    {
+     "text": "don't",
+     "start": 0.778,
+     "end": 0.998
+    },
+    {
+     "text": "let",
+     "start": 1.033,
+     "end": 1.173
+    },
+    {
+     "text": "Black",
+     "start": 1.231,
+     "end": 1.463
+    },
+    {
+     "text": "Friday",
+     "start": 1.509,
+     "end": 1.788
+    },
+    {
+     "text": "shop",
+     "start": 1.846,
+     "end": 2.078
+    },
+    {
+     "text": "for",
+     "start": 2.136,
+     "end": 2.241
+    },
+    {
+     "text": "you.",
+     "start": 2.299,
+     "end": 2.74
+    }
+   ]
+  }
+ ]
+}
