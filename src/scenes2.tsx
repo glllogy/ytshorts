@@ -302,12 +302,14 @@ const CompareBars: React.FC<SceneProps> = ({ scene, characters }) => {
         {bars.map((b, i) => {
           const ch = characters[b.who];
           const h = Math.max(10, ease(frame, 4 + i * 6, 24 + i * 6, 0, (b.value / max) * H));
-          const isMax = b.value === max;
+          const min = Math.min(...bars.map((x) => x.value));
+          const isMax = scene.props.lowerWins ? b.value === min : b.value === max;
+          const suffix = scene.props.fmt === "mo" ? "/mo" : "";
           return (
             <g key={i}>
               <rect x={layout[i].bar - bw / 2} y={GROUND_Y - h} width={bw} height={h} fill={isMax ? C.green : C.red} stroke={C.ink} strokeWidth={8} />
-              <text x={layout[i].bar} y={GROUND_Y - h - 30} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={isMax ? 78 : 70} fill={isMax ? C.green : C.red}>
-                {money(ease(frame, 4 + i * 6, 24 + i * 6, 0, b.value))}
+              <text x={layout[i].bar} y={GROUND_Y - h - 30} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={suffix ? 60 : isMax ? 78 : 70} fill={isMax ? C.green : C.red}>
+                {money(ease(frame, 4 + i * 6, 24 + i * 6, 0, b.value))}{suffix}
               </text>
               <Stickman
                 x={layout[i].man}

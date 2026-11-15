@@ -1,0 +1,60 @@
+{
+  "id": "rent-vs-buy",
+  "title": "Is renting really throwing money away?",
+  "voice": "nPczCjzI2devNBz1zQrb",
+  "characters": {
+    "mike": { "name": "MIKE", "color": "#E5484D" },
+    "jake": { "name": "JAKE", "color": "#2E8B57" }
+  },
+  "scenes": [
+    {
+      "type": "rentHook",
+      "text": "\"Renting is throwing money away.\" Your parents said it. But here's the math nobody shows you.",
+      "props": { "who": "jake", "line1": "RENTING =", "line2": "THROWING MONEY AWAY?", "mathWord": "math" }
+    },
+    {
+      "type": "twoHouses",
+      "text": "Mike buys a $400,000 house. Jake rents the same kind of house for $1,600 a month.",
+      "props": { "leftTag": "BOUGHT $400K", "leftWord": "buys", "rightTag": "RENT $1,600/mo", "rightWord": "rents" }
+    },
+    {
+      "type": "twoHouses",
+      "text": "Mike laughs. \"You're just paying your landlord's mortgage!\"",
+      "props": { "bubble": "YOU'RE PAYING HIS MORTGAGE!", "bubbleWord": "paying", "leftTag": "BOUGHT $400K", "rightTag": "RENT $1,600/mo", "noIntro": true }
+    },
+    {
+      "type": "costStack",
+      "text": "But owning has its own rent. Property tax: about 1% a year. Repairs: about 1%. And interest, plus what his down payment could have earned: about 3%.",
+      "props": { "who": "mike", "title": "OWNER'S \"RENT\"", "items": [
+        { "word": "tax", "label": "PROPERTY TAX", "pct": 1 },
+        { "word": "repairs", "label": "REPAIRS", "pct": 1 },
+        { "word": "interest", "label": "INTEREST + LOST RETURNS", "pct": 3 }
+      ], "totalLabel": "≈ 5% / YEAR" }
+    },
+    {
+      "type": "formula",
+      "text": "That's roughly 5% of the price, every year. $400,000 times 5%, divided by 12, is $1,667 a month he never gets back.",
+      "props": { "title": "MIKE'S LOST MONEY", "parts": [ ["$400,000", "400,000"], ["× 5%", "5%", 1], ["÷ 12", "12"] ], "result": "$1,667/mo", "resultWord": "$1,667", "note": "NEVER COMES BACK" }
+    },
+    {
+      "type": "compareBars",
+      "text": "Jake's rent? $1,600. So who's really throwing money away?",
+      "props": { "lowerWins": true, "fmt": "mo", "bars": [ { "who": "mike", "value": 1667 }, { "who": "jake", "value": 1600 } ] }
+    },
+    {
+      "type": "fork",
+      "text": "But here's the catch. Renting only wins if Jake invests the $80,000 he didn't put down. If he spends it, Mike wins.",
+      "props": { "who": "jake", "title": "THE CATCH", "a": "INVESTS $80K", "aResult": "RENTING WINS", "aWord": "invests", "b": "SPENDS IT", "bResult": "BUYING WINS", "bWord": "spends" }
+    },
+    {
+      "type": "formula",
+      "text": "So save this. Home price, times 5%, divided by 12. If rent is lower than that, renting is not throwing money away.",
+      "props": { "title": "SAVE THIS", "parts": [ ["HOME PRICE", "price"], ["× 5%", "5%"], ["÷ 12", "12"] ], "result": "> RENT?", "resultWord": "rent", "note": "RENTING IS FINE", "noteWord": "not", "save": true }
+    },
+    {
+      "type": "cta",
+      "text": "Rent or buy? Tell me in the comments, and follow for more.",
+      "props": { "who": "jake", "button": "RENT OR BUY?", "disclaimer": "Simplified rule of thumb (the 5% rule). Your taxes, rates and market will differ. Not financial advice." }
+    }
+  ]
+}
