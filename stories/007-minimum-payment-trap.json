@@ -1,0 +1,51 @@
+{
+  "id": "minimum-payment-trap",
+  "title": "Why the minimum payment keeps you broke for 19 years",
+  "voice": "nPczCjzI2devNBz1zQrb",
+  "characters": {
+    "mike": { "name": "MIKE", "color": "#E5484D" },
+    "jake": { "name": "JAKE", "color": "#2E8B57" }
+  },
+  "scenes": [
+    {
+      "type": "cardHook",
+      "text": "Your credit card bill says: minimum payment, $150. Pay just that, and this $5,000 takes almost 20 years to pay off.",
+      "props": { "balance": "$5,000", "min": "$150", "minWord": "$150", "stamp": "19.5 YEARS", "stampWord": "20" }
+    },
+    {
+      "type": "duo",
+      "text": "Mike and Jake both owe $5,000 at 24% interest. Mike pays the minimum. Jake pays $250 a month.",
+      "props": { "title": "SAME DEBT", "both": "OWES $5,000", "left": "mike", "right": "jake", "leftTag": "MINIMUM", "leftWord": "minimum", "rightTag": "$250/mo", "rightWord": "$250", "sub": "24% APR", "subWord": "24%" }
+    },
+    {
+      "type": "debtRace",
+      "text": "Two years later, Jake is completely debt-free. Mike still owes $3,850.",
+      "props": { "start": 5000, "mikeEnd": 3850, "months": 26, "freeWord": "free", "oweWord": "$3,850" }
+    },
+    {
+      "type": "timeSkip",
+      "text": "Mike keeps paying. And paying. He finally finishes after nineteen and a half years.",
+      "props": { "from": 2026, "to": 2045, "label": "STILL PAYING..." }
+    },
+    {
+      "type": "compareBars",
+      "text": "Total interest? Mike paid $8,887. Jake paid $1,449.",
+      "props": { "lowerWins": true, "bars": [ { "who": "mike", "value": 8887 }, { "who": "jake", "value": 1449 } ], "title": "INTEREST PAID" }
+    },
+    {
+      "type": "formula",
+      "text": "Jake's extra $100 a month saved him $7,438 and 17 years of payments.",
+      "props": { "title": "JUST +$100/mo", "parts": [ ["$7,438 SAVED", "7,438"], ["17 YEARS FASTER", "17"] ], "result": "WORTH IT", "resultWord": "payments", "save": true, "note": "SAME CARD. SAME DEBT.", "noteWord": "payments" }
+    },
+    {
+      "type": "lesson",
+      "text": "So never pay just the minimum. Pick a fixed amount, and keep paying it, even when the minimum drops.",
+      "props": { "who": "jake", "line1": "NEVER PAY", "line2": "THE MINIMUM", "switchWord": "never", "vs": "wallet" }
+    },
+    {
+      "type": "cta",
+      "text": "What's your credit card's interest rate? Drop it in the comments.",
+      "props": { "who": "jake", "button": "WHAT'S YOUR APR?", "disclaimer": "Example: $5,000 at 24% APR, minimum = interest + 1% of balance. Your card's terms may differ. Not financial advice." }
+    }
+  ]
+}

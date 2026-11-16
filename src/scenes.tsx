@@ -9,6 +9,7 @@ import { SCENES3 } from "./scenes3";
 import { SCENES4 } from "./scenes4";
 import { SCENES5 } from "./scenes5";
 import { SCENES6 } from "./scenes6";
+import { SCENES7 } from "./scenes7";
 import { ease, money, Stamp, Tag, Title, usePop, wordFrame } from "./components/ui";
 import type { SceneProps } from "./types";
 
@@ -364,7 +365,7 @@ const Cta: React.FC<SceneProps> = ({ scene, characters }) => {
         <Ground />
         <Stickman x={300} y={GROUND_Y} pose={POSES.wave} waveHand color={ch.color} name={ch.name} scale={1.2} mood="happy" />
       </Svg>
-      <div style={{ position: "absolute", left: 680, top: 760, translate: "-50% -50%", scale: String(usePop(4) * pulse * press), background: C.red, color: "#fff", fontFamily: FONT, fontWeight: 900, fontSize: Math.min(84, Math.floor(560 / (String(scene.props.button).length * 0.68))), padding: "26px 56px", borderRadius: 60, whiteSpace: "nowrap", border: `8px solid ${C.ink}`, boxShadow: `0 12px 0 ${C.ink}` }}>
+      <div style={{ position: "absolute", left: 680, top: 560, translate: "-50% -50%", scale: String(usePop(4) * pulse * press), background: C.red, color: "#fff", fontFamily: FONT, fontWeight: 900, fontSize: Math.min(84, Math.floor(560 / (String(scene.props.button).length * 0.68))), padding: "26px 56px", borderRadius: 60, whiteSpace: "nowrap", border: `8px solid ${C.ink}`, boxShadow: `0 12px 0 ${C.ink}` }}>
         {scene.props.button}
       </div>
       <div style={{ position: "absolute", left: 80, right: 80, top: 1180, textAlign: "center", fontFamily: FONT, fontWeight: 800, fontSize: 30, color: C.gray }}>{scene.props.disclaimer}</div>
@@ -389,4 +390,5 @@ export const SCENES: Record<string, React.FC<SceneProps>> = {
   ...SCENES4,
   ...SCENES5,
   ...SCENES6,
+  ...SCENES7,
 };

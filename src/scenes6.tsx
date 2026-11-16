@@ -203,7 +203,7 @@ const PopLine: React.FC<{ at: number; text: string }> = ({ at, text }) => {
   const frame = useCurrentFrame();
   const s = usePop(at);
   return (
-    <div style={{ fontSize: 96, color: C.ink, scale: String(s), opacity: frame >= at ? 1 : 0, letterSpacing: -2, lineHeight: 1.05 }}>{text}</div>
+    <div style={{ fontSize: Math.min(96, Math.floor(900 / (text.length * 0.7))), color: C.ink, scale: String(s), opacity: frame >= at ? 1 : 0, letterSpacing: -2, lineHeight: 1.05, whiteSpace: "nowrap" }}>{text}</div>
   );
 };
 

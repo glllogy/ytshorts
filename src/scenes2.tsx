@@ -297,6 +297,7 @@ const CompareBars: React.FC<SceneProps> = ({ scene, characters }) => {
   ];
   return (
     <AbsoluteFill>
+      {scene.props.title && <Title text={scene.props.title} at={0} y={200} size={100} />}
       <Svg>
         <Ground />
         {bars.map((b, i) => {
