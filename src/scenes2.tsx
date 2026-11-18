@@ -297,7 +297,7 @@ const CompareBars: React.FC<SceneProps> = ({ scene, characters }) => {
   ];
   return (
     <AbsoluteFill>
-      {scene.props.title && <Title text={scene.props.title} at={0} y={200} size={100} />}
+      {scene.props.title && <Title text={scene.props.title} at={0} y={200} size={Math.min(100, Math.floor(950 / (String(scene.props.title).length * 0.7)))} />}
       <Svg>
         <Ground />
         {bars.map((b, i) => {
@@ -309,7 +309,7 @@ const CompareBars: React.FC<SceneProps> = ({ scene, characters }) => {
           return (
             <g key={i}>
               <rect x={layout[i].bar - bw / 2} y={GROUND_Y - h} width={bw} height={h} fill={isMax ? C.green : C.red} stroke={C.ink} strokeWidth={8} />
-              <text x={layout[i].bar} y={GROUND_Y - h - 30} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={suffix ? 60 : isMax ? 78 : 70} fill={isMax ? C.green : C.red}>
+              <text x={layout[i].bar} y={Math.min(GROUND_Y - h - 30, 650)} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={Math.min(suffix ? 60 : isMax ? 78 : 70, Math.floor(430 / ((money(b.value) + suffix).length * 0.62)))} fill={isMax ? C.green : C.red}>
                 {money(ease(frame, 4 + i * 6, 24 + i * 6, 0, b.value))}{suffix}
               </text>
               <Stickman
@@ -325,6 +325,8 @@ const CompareBars: React.FC<SceneProps> = ({ scene, characters }) => {
           );
         })}
       </Svg>
+      {scene.props.diff && <Tag x={360} y={930} at={w(scene.props.diffWord, 180)} text={scene.props.diff} bg={C.red} size={64} rotate={-6} />}
+      {scene.props.diff && <Sfx at={w(scene.props.diffWord, 180)} name="thud" />}
       <Sfx at={4} name="whoosh" />
       <Sfx at={30} name="ding" volume={0.5} />
     </AbsoluteFill>

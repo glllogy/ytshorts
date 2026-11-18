@@ -10,6 +10,7 @@ import { SCENES4 } from "./scenes4";
 import { SCENES5 } from "./scenes5";
 import { SCENES6 } from "./scenes6";
 import { SCENES7 } from "./scenes7";
+import { SCENES8 } from "./scenes8";
 import { ease, money, Stamp, Tag, Title, usePop, wordFrame } from "./components/ui";
 import type { SceneProps } from "./types";
 
@@ -391,4 +392,5 @@ export const SCENES: Record<string, React.FC<SceneProps>> = {
   ...SCENES5,
   ...SCENES6,
   ...SCENES7,
+  ...SCENES8,
 };

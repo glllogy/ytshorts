@@ -1,0 +1,52 @@
+{
+  "id": "saved-by-age",
+  "title": "How much should you have saved by 30, 40, 50?",
+  "voice": "nPczCjzI2devNBz1zQrb",
+  "characters": {
+    "mike": { "name": "MIKE", "color": "#E5484D" },
+    "jake": { "name": "JAKE", "color": "#2E8B57" }
+  },
+  "scenes": [
+    {
+      "type": "ageHook",
+      "text": "How much money should you have saved by 30? Most people guess way too low.",
+      "props": { "age": "30", "guesses": ["$5K?", "$10K?", "$20K?"], "guessWord": "guess", "lowWord": "low" }
+    },
+    {
+      "type": "ageLadder",
+      "text": "The rule of thumb: one year of salary by 30. Three times by 40. Six times by 50. Eight times by 60. And ten times your salary by 67.",
+      "props": { "salary": 60000, "steps": [
+        { "age": 30, "x": 1, "word": "30" },
+        { "age": 40, "x": 3, "word": "40" },
+        { "age": 50, "x": 6, "word": "50" },
+        { "age": 60, "x": 8, "word": "60" },
+        { "age": 67, "x": 10, "word": "67" }
+      ] }
+    },
+    {
+      "type": "behind",
+      "text": "If that made you feel sick, you're not alone. Mike is 35, and he's barely started.",
+      "props": { "who": "mike", "age": "AGE 35", "ageWord": "35", "target": "TARGET: $120,000", "has": "MIKE HAS: $4,000", "hasWord": "barely" }
+    },
+    {
+      "type": "investResult",
+      "text": "Here's the fix. Save 15% of your pay, starting today. At 7% a year, Mike could still reach $1,071,000 by 67.",
+      "props": { "who": "mike", "to": 1071308, "label": "MIKE AT 67", "startWord": "today", "endWord": "$1,071", "rateWord": "7%", "rateLabel": "15% · ~7%/yr" }
+    },
+    {
+      "type": "compareBars",
+      "text": "But Jake started the same plan at 25. He'll have $2,282,000. Those 10 years cost Mike over $1.2 million.",
+      "props": { "title": "SAME PLAN. 10 YEARS EARLIER.", "diff": "-$1.2M", "diffWord": "cost", "bars": [ { "who": "mike", "value": 1071308 }, { "who": "jake", "value": 2282780 } ] }
+    },
+    {
+      "type": "lesson",
+      "text": "Behind? Don't panic. Start with whatever you can today, and raise it every year.",
+      "props": { "who": "jake", "line1": "BEHIND? DON'T PANIC.", "line2": "START TODAY", "switchWord": "start", "vs": "wallet" }
+    },
+    {
+      "type": "cta",
+      "text": "Comment your age, and tell me: are you on track?",
+      "props": { "who": "jake", "button": "YOUR AGE?", "disclaimer": "Fidelity rule of thumb. Example: $60K salary, 15% saved, ~7% yearly return, not inflation-adjusted. Not financial advice." }
+    }
+  ]
+}

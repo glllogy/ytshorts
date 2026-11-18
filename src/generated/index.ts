@@ -5,5 +5,6 @@ import s3 from "./janitor-8-million.json";
 import s4 from "./minimum-payment-trap.json";
 import s5 from "./penny-vs-million.json";
 import s6 from "./rent-vs-buy.json";
+import s7 from "./saved-by-age.json";
 import type { Timeline } from "../types";
-export const stories = [s0, s1, s2, s3, s4, s5, s6] as unknown as Timeline[];
+export const stories = [s0, s1, s2, s3, s4, s5, s6, s7] as unknown as Timeline[];
