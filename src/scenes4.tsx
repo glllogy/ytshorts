@@ -157,15 +157,15 @@ const Flip: React.FC<SceneProps> = ({ scene, characters }) => {
   const frame = useCurrentFrame();
   const w = useWords(scene);
   const ch = characters[scene.props.who];
-  const tAny = w("any", 30), tStrike = w(scene.props.strikeWord, 60), tTo = w(scene.props.toWord, 100);
+  const tAny = w(scene.props.headerWord ?? "any", 30), tStrike = w(scene.props.strikeWord, 60), tTo = w(scene.props.toWord, 100);
   const strike = ease(frame, tStrike, tStrike + 8, 0, 1);
   const sTo = usePop(tTo, 9);
   const pose = usePoseTrack([[0, "shrug"], [tStrike, "sad"], [tTo, "facepalm"]]);
   return (
     <AbsoluteFill>
       <div style={{ position: "absolute", left: 0, right: 0, top: 210, textAlign: "center", fontFamily: FONT, fontWeight: 900 }}>
-        <div style={{ fontSize: 46, color: C.gray }}>PLANNED TO BUY:</div>
-        <div style={{ fontSize: 80, color: C.ink, scale: String(usePop(tAny)) }}>{frame >= tAny ? "NOTHING" : ""}</div>
+        <div style={{ fontSize: 46, color: C.gray }}>{scene.props.header ?? "PLANNED TO BUY:"}</div>
+        <div style={{ fontSize: 80, color: C.ink, scale: String(usePop(tAny)) }}>{frame >= tAny ? scene.props.headerValue ?? "NOTHING" : ""}</div>
       </div>
       <div style={{ position: "absolute", left: 0, right: 0, top: 450, display: "flex", justifyContent: "center" }}>
         <div style={{ position: "relative", fontFamily: FONT, fontWeight: 900, fontSize: 120, color: C.green, opacity: frame >= tTo ? 0.45 : 1 }}>

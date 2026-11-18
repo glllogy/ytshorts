@@ -19,16 +19,16 @@ const AgeHook: React.FC<SceneProps> = ({ scene, characters }) => {
   const pulse = 1 + 0.05 * Math.sin(frame / 4);
   const mike = characters.mike;
   const pos = [
-    [200, 620, -8],
-    [540, 590, 4],
-    [880, 620, 8],
+    [200, 650, -8],
+    [540, 720, 4],
+    [880, 650, 8],
   ];
   return (
     <AbsoluteFill>
       <div style={{ position: "absolute", left: 0, right: 0, top: 170, textAlign: "center", fontFamily: FONT, fontWeight: 900, scale: String(s) }}>
-        <div style={{ fontSize: 72, color: C.ink, letterSpacing: -2 }}>HOW MUCH SAVED BY</div>
+        <div style={{ fontSize: 72, color: C.ink, letterSpacing: -2 }}>{p.line1 ?? "HOW MUCH SAVED BY"}</div>
         <div style={{ display: "inline-block", marginTop: 14, background: C.yellow, border: `9px solid ${C.ink}`, borderRadius: 34, padding: "0 50px", fontSize: 230, lineHeight: 1.05, color: C.ink, scale: String(pulse), boxShadow: `0 14px 0 ${C.ink}` }}>
-          {p.age}?
+          {p.big ?? `${p.age}?`}
         </div>
       </div>
       <Svg>
@@ -38,13 +38,13 @@ const AgeHook: React.FC<SceneProps> = ({ scene, characters }) => {
       </Svg>
       {(p.guesses as string[]).map((g, i) => (
         <React.Fragment key={i}>
-          <Tag x={pos[i][0]} y={pos[i][1]} at={tGuess + i * 5} text={g} bg="#fff" color={C.ink} size={60} rotate={pos[i][2]} />
+          <Tag x={pos[i][0]} y={pos[i][1]} at={tGuess + i * 5} text={g} bg="#fff" color={C.ink} size={Math.min(56, Math.floor(270 / (g.length * 0.62)))} rotate={pos[i][2]} />
           {frame >= tLow + i * 3 && (
             <div style={{ position: "absolute", left: pos[i][0] - 110, top: pos[i][1] - 6, width: 220, height: 14, background: C.red, borderRadius: 7, rotate: `${-10 + i * 6}deg` }} />
           )}
         </React.Fragment>
       ))}
-      <Stamp x={540} y={740} at={tLow + 10} text="TOO LOW" size={96} />
+      <Stamp x={540} y={820} at={tLow + 10} text={p.stamp ?? "TOO LOW"} size={96} />
       <Sfx at={0} name="whoosh" />
       {[0, 1, 2].map((i) => (
         <Sfx key={i} at={tGuess + i * 5} name="pop" volume={0.5} />

@@ -1,0 +1,57 @@
+{
+  "id": "is-100k-rich",
+  "title": "Is $100K a year rich? Here's what's actually left",
+  "voice": "nPczCjzI2devNBz1zQrb",
+  "characters": {
+    "mike": { "name": "MIKE", "color": "#E5484D" },
+    "jake": { "name": "JAKE", "color": "#2E8B57" }
+  },
+  "scenes": [
+    {
+      "type": "ageHook",
+      "text": "Is $100,000 a year rich? Most people think so. Let's see what's actually left.",
+      "props": { "line1": "IS THIS RICH?", "big": "$100K", "guesses": ["RICH!", "SET FOR LIFE", "EASY MODE"], "guessWord": "think", "lowWord": "left", "stamp": "LET'S SEE" }
+    },
+    {
+      "type": "spendAll",
+      "text": "Mike gets a $100,000 job. Federal tax takes about $13,000. Social Security and Medicare, another $7,650.",
+      "props": { "who": "mike", "header": "MIKE'S SALARY / YEAR", "start": 100000, "items": [
+        { "word": "federal", "label": "FEDERAL TAX", "amount": 13170 },
+        { "word": "social", "label": "FICA", "amount": 7650 }
+      ] }
+    },
+    {
+      "type": "spendAll",
+      "text": "That's $6,598 a month. Rent: $2,000. Car: $800. Food: $700. Bills and phone: $350. Health insurance: $300.",
+      "props": { "who": "mike", "header": "PER MONTH", "start": 6598, "items": [
+        { "word": "rent", "label": "RENT", "amount": 2000 },
+        { "word": "car", "label": "CAR", "amount": 800 },
+        { "word": "food", "label": "FOOD", "amount": 700 },
+        { "word": "bills", "label": "BILLS", "amount": 350 },
+        { "word": "health", "label": "HEALTH", "amount": 300 }
+      ] }
+    },
+    {
+      "type": "spendAll",
+      "text": "Then life happens. Dinners out, subscriptions, a weekend trip. Another $1,500.",
+      "props": { "who": "mike", "header": "LEFT THIS MONTH", "start": 2448, "items": [
+        { "word": "$1,500", "label": "FUN", "amount": 1500 }
+      ], "thought": "BUT I MAKE 100K!", "thoughtWord": "life" }
+    },
+    {
+      "type": "flip",
+      "text": "So $100,000 a year turns into about $948 a month of real savings.",
+      "props": { "who": "mike", "header": "THE HEADLINE:", "headerValue": "$100,000 / YEAR", "headerWord": "so", "from": "RICH?", "to": "$948 / MONTH", "strikeWord": "turns", "toWord": "$948" }
+    },
+    {
+      "type": "lesson",
+      "text": "Rich isn't what you earn. It's what you keep.",
+      "props": { "who": "jake", "line1": "RICH ISN'T WHAT YOU EARN.", "line2": "IT'S WHAT YOU KEEP", "switchWord": "rich", "vs": "wallet" }
+    },
+    {
+      "type": "cta",
+      "text": "Is $100K rich where you live? Comment your city.",
+      "props": { "who": "jake", "button": "YOUR CITY?", "disclaimer": "Example: single filer, 2026 federal tax, no state income tax (e.g. Texas). Costs vary by city. Not financial advice." }
+    }
+  ]
+}

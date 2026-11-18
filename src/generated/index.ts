@@ -1,10 +1,11 @@
 import s0 from "./babylon-10-percent.json";
 import s1 from "./black-friday-trap.json";
 import s2 from "./car-vs-index.json";
-import s3 from "./janitor-8-million.json";
-import s4 from "./minimum-payment-trap.json";
-import s5 from "./penny-vs-million.json";
-import s6 from "./rent-vs-buy.json";
-import s7 from "./saved-by-age.json";
+import s3 from "./is-100k-rich.json";
+import s4 from "./janitor-8-million.json";
+import s5 from "./minimum-payment-trap.json";
+import s6 from "./penny-vs-million.json";
+import s7 from "./rent-vs-buy.json";
+import s8 from "./saved-by-age.json";
 import type { Timeline } from "../types";
-export const stories = [s0, s1, s2, s3, s4, s5, s6, s7] as unknown as Timeline[];
+export const stories = [s0, s1, s2, s3, s4, s5, s6, s7, s8] as unknown as Timeline[];

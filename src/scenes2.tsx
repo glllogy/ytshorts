@@ -71,7 +71,7 @@ const SpendAll: React.FC<SceneProps> = ({ scene, characters }) => {
   const ch = characters[scene.props.who];
   const items = scene.props.items as Item[];
   const times = items.map((it, i) => w(it.word, 20 + i * 20));
-  const tSave = w("save", 120);
+  const tSave = scene.props.thought ? w(scene.props.thoughtWord ?? "save", 120) : 99999;
   let val = scene.props.start as number;
   items.forEach((it, i) => (val -= ease(frame, times[i], times[i] + 8, 0, it.amount)));
   const pose = usePoseTrack([[0, "present"], [tSave, "pointUp"]]);
@@ -79,7 +79,7 @@ const SpendAll: React.FC<SceneProps> = ({ scene, characters }) => {
   return (
     <AbsoluteFill>
       <div style={{ position: "absolute", top: 200, left: 0, right: 0, textAlign: "center", fontFamily: FONT, fontWeight: 900 }}>
-        <div style={{ fontSize: 52, color: C.gray }}>MIKE'S PAYCHECK</div>
+        <div style={{ fontSize: 52, color: C.gray }}>{scene.props.header ?? "MIKE'S PAYCHECK"}</div>
         <div style={{ fontSize: 140, color: val <= 0 ? C.red : C.green, letterSpacing: -4 }}>{money(Math.max(0, val))}</div>
       </div>
       <Svg>
@@ -95,14 +95,14 @@ const SpendAll: React.FC<SceneProps> = ({ scene, characters }) => {
             <circle cx={-60} cy={110} r={12} fill="#fff" stroke={C.ink} strokeWidth={5} />
             <circle cx={-30} cy={70} r={20} fill="#fff" stroke={C.ink} strokeWidth={6} />
             <rect x={-10} y={-40} width={380} height={100} rx={50} fill="#fff" stroke={C.ink} strokeWidth={7} />
-            <text x={180} y={25} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={44} fill={C.ink}>
+            <text x={180} y={25} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={Math.min(44, Math.floor(560 / (String(scene.props.thought).length * 0.72)))} fill={C.ink}>
               {scene.props.thought}
             </text>
           </g>
         )}
       </Svg>
       {items.map((it, i) => (
-        <Tag key={i} x={790} y={560 + i * 125} at={times[i] + 6} text={`${it.label} -$${it.amount.toLocaleString("en-US")}`} bg={C.red} size={44} rotate={i % 2 ? 3 : -3} />
+        <Tag key={i} x={760} y={560 + i * 125} at={times[i] + 6} text={`${it.label} -$${it.amount.toLocaleString("en-US")}`} bg={C.red} size={Math.min(44, Math.floor(560 / ((it.label.length + it.amount.toLocaleString("en-US").length + 3) * 0.66)))} rotate={i % 2 ? 3 : -3} />
       ))}
       {times.map((t, i) => (
         <Sfx key={i} at={t} name="pop" />

@@ -1,0 +1,624 @@
+{
+ "id": "is-100k-rich",
+ "seq": 9,
+ "title": "Is $100K a year rich? Here's what's actually left",
+ "fps": 30,
+ "characters": {
+  "mike": {
+   "name": "MIKE",
+   "color": "#E5484D"
+  },
+  "jake": {
+   "name": "JAKE",
+   "color": "#2E8B57"
+  }
+ },
+ "durationInFrames": 1474,
+ "scenes": [
+  {
+   "type": "ageHook",
+   "props": {
+    "line1": "IS THIS RICH?",
+    "big": "$100K",
+    "guesses": [
+     "RICH!",
+     "SET FOR LIFE",
+     "EASY MODE"
+    ],
+    "guessWord": "think",
+    "lowWord": "left",
+    "stamp": "LET'S SEE"
+   },
+   "text": "Is $100,000 a year rich? Most people think so. Let's see what's actually left.",
+   "audio": "is-100k-rich/s01-bdce39d4cd.mp3",
+   "from": 0,
+   "durationInFrames": 181,
+   "words": [
+    {
+     "text": "Is",
+     "start": 0.0,
+     "end": 0.197
+    },
+    {
+     "text": "$100,000",
+     "start": 0.255,
+     "end": 1.312
+    },
+    {
+     "text": "a",
+     "start": 1.358,
+     "end": 1.393
+    },
+    {
+     "text": "year",
+     "start": 1.463,
+     "end": 1.637
+    },
+    {
+     "text": "rich?",
+     "start": 1.718,
+     "end": 2.148
+    },
+    {
+     "text": "Most",
+     "start": 2.705,
+     "end": 2.926
+    },
+    {
+     "text": "people",
+     "start": 2.961,
+     "end": 3.181
+    },
+    {
+     "text": "think",
+     "start": 3.216,
+     "end": 3.402
+    },
+    {
+     "text": "so.",
+     "start": 3.448,
+     "end": 3.762
+    },
+    {
+     "text": "Let's",
+     "start": 4.017,
+     "end": 4.226
+    },
+    {
+     "text": "see",
+     "start": 4.249,
+     "end": 4.342
+    },
+    {
+     "text": "what's",
+     "start": 4.377,
+     "end": 4.528
+    },
+    {
+     "text": "actually",
+     "start": 4.551,
+     "end": 4.83
+    },
+    {
+     "text": "left.",
+     "start": 4.876,
+     "end": 5.759
+    }
+   ]
+  },
+  {
+   "type": "spendAll",
+   "props": {
+    "who": "mike",
+    "header": "MIKE'S SALARY / YEAR",
+    "start": 100000,
+    "items": [
+     {
+      "word": "federal",
+      "label": "FEDERAL TAX",
+      "amount": 13170
+     },
+     {
+      "word": "social",
+      "label": "FICA",
+      "amount": 7650
+     }
+    ]
+   },
+   "text": "Mike gets a $100,000 job. Federal tax takes about $13,000. Social Security and Medicare, another $7,650.",
+   "audio": "is-100k-rich/s02-96830965d9.mp3",
+   "from": 181,
+   "durationInFrames": 297,
+   "words": [
+    {
+     "text": "Mike",
+     "start": 0.0,
+     "end": 0.255
+    },
+    {
+     "text": "gets",
+     "start": 0.29,
+     "end": 0.464
+    },
+    {
+     "text": "a",
+     "start": 0.511,
+     "end": 0.546
+    },
+    {
+     "text": "$100,000",
+     "start": 0.604,
+     "end": 1.521
+    },
+    {
+     "text": "job.",
+     "start": 1.579,
+     "end": 2.032
+    },
+    {
+     "text": "Federal",
+     "start": 2.392,
+     "end": 2.717
+    },
+    {
+     "text": "tax",
+     "start": 2.763,
+     "end": 3.03
+    },
+    {
+     "text": "takes",
+     "start": 3.077,
+     "end": 3.262
+    },
+    {
+     "text": "about",
+     "start": 3.297,
+     "end": 3.495
+    },
+    {
+     "text": "$13,000.",
+     "start": 3.529,
+     "end": 4.737
+    },
+    {
+     "text": "Social",
+     "start": 5.097,
+     "end": 5.457
+    },
+    {
+     "text": "Security",
+     "start": 5.526,
+     "end": 6.037
+    },
+    {
+     "text": "and",
+     "start": 6.084,
+     "end": 6.153
+    },
+    {
+     "text": "Medicare,",
+     "start": 6.211,
+     "end": 6.85
+    },
+    {
+     "text": "another",
+     "start": 7.07,
+     "end": 7.384
+    },
+    {
+     "text": "$7,650.",
+     "start": 7.454,
+     "end": 9.613
+    }
+   ]
+  },
+  {
+   "type": "spendAll",
+   "props": {
+    "who": "mike",
+    "header": "PER MONTH",
+    "start": 6598,
+    "items": [
+     {
+      "word": "rent",
+      "label": "RENT",
+      "amount": 2000
+     },
+     {
+      "word": "car",
+      "label": "CAR",
+      "amount": 800
+     },
+     {
+      "word": "food",
+      "label": "FOOD",
+      "amount": 700
+     },
+     {
+      "word": "bills",
+      "label": "BILLS",
+      "amount": 350
+     },
+     {
+      "word": "health",
+      "label": "HEALTH",
+      "amount": 300
+     }
+    ]
+   },
+   "text": "That's $6,598 a month. Rent: $2,000. Car: $800. Food: $700. Bills and phone: $350. Health insurance: $300.",
+   "audio": "is-100k-rich/s03-6062260384.mp3",
+   "from": 478,
+   "durationInFrames": 421,
+   "words": [
+    {
+     "text": "That's",
+     "start": 0.0,
+     "end": 0.279
+    },
+    {
+     "text": "$6,598",
+     "start": 0.302,
+     "end": 1.765
+    },
+    {
+     "text": "a",
+     "start": 1.823,
+     "end": 1.858
+    },
+    {
+     "text": "month.",
+     "start": 1.892,
+     "end": 2.241
+    },
+    {
+     "text": "Rent:",
+     "start": 2.647,
+     "end": 3.03
+    },
+    {
+     "text": "$2,000.",
+     "start": 3.286,
+     "end": 4.331
+    },
+    {
+     "text": "Car:",
+     "start": 4.69,
+     "end": 5.248
+    },
+    {
+     "text": "$800.",
+     "start": 5.294,
+     "end": 6.223
+    },
+    {
+     "text": "Food:",
+     "start": 6.583,
+     "end": 6.989
+    },
+    {
+     "text": "$700.",
+     "start": 7.024,
+     "end": 8.197
+    },
+    {
+     "text": "Bills",
+     "start": 8.452,
+     "end": 8.742
+    },
+    {
+     "text": "and",
+     "start": 8.789,
+     "end": 8.87
+    },
+    {
+     "text": "phone:",
+     "start": 8.905,
+     "end": 9.358
+    },
+    {
+     "text": "$350.",
+     "start": 9.52,
+     "end": 10.867
+    },
+    {
+     "text": "Health",
+     "start": 11.169,
+     "end": 11.424
+    },
+    {
+     "text": "insurance:",
+     "start": 11.471,
+     "end": 12.051
+    },
+    {
+     "text": "$300.",
+     "start": 12.307,
+     "end": 13.746
+    }
+   ]
+  },
+  {
+   "type": "spendAll",
+   "props": {
+    "who": "mike",
+    "header": "LEFT THIS MONTH",
+    "start": 2448,
+    "items": [
+     {
+      "word": "$1,500",
+      "label": "FUN",
+      "amount": 1500
+     }
+    ],
+    "thought": "BUT I MAKE 100K!",
+    "thoughtWord": "life"
+   },
+   "text": "Then life happens. Dinners out, subscriptions, a weekend trip. Another $1,500.",
+   "audio": "is-100k-rich/s04-4280c09e32.mp3",
+   "from": 899,
+   "durationInFrames": 167,
+   "words": [
+    {
+     "text": "Then",
+     "start": 0.0,
+     "end": 0.174
+    },
+    {
+     "text": "life",
+     "start": 0.244,
+     "end": 0.441
+    },
+    {
+     "text": "happens.",
+     "start": 0.476,
+     "end": 0.871
+    },
+    {
+     "text": "Dinners",
+     "start": 0.94,
+     "end": 1.265
+    },
+    {
+     "text": "out,",
+     "start": 1.324,
+     "end": 1.567
+    },
+    {
+     "text": "subscriptions,",
+     "start": 1.672,
+     "end": 2.485
+    },
+    {
+     "text": "a",
+     "start": 2.624,
+     "end": 2.694
+    },
+    {
+     "text": "weekend",
+     "start": 2.763,
+     "end": 3.053
+    },
+    {
+     "text": "trip.",
+     "start": 3.088,
+     "end": 3.471
+    },
+    {
+     "text": "Another",
+     "start": 3.773,
+     "end": 4.145
+    },
+    {
+     "text": "$1,500.",
+     "start": 4.249,
+     "end": 5.294
+    }
+   ]
+  },
+  {
+   "type": "flip",
+   "props": {
+    "who": "mike",
+    "header": "THE HEADLINE:",
+    "headerValue": "$100,000 / YEAR",
+    "headerWord": "so",
+    "from": "RICH?",
+    "to": "$948 / MONTH",
+    "strikeWord": "turns",
+    "toWord": "$948"
+   },
+   "text": "So $100,000 a year turns into about $948 a month of real savings.",
+   "audio": "is-100k-rich/s05-10b24a1f56.mp3",
+   "from": 1066,
+   "durationInFrames": 181,
+   "words": [
+    {
+     "text": "So",
+     "start": 0.0,
+     "end": 0.267
+    },
+    {
+     "text": "$100,000",
+     "start": 0.464,
+     "end": 1.463
+    },
+    {
+     "text": "a",
+     "start": 1.498,
+     "end": 1.533
+    },
+    {
+     "text": "year",
+     "start": 1.602,
+     "end": 1.823
+    },
+    {
+     "text": "turns",
+     "start": 1.892,
+     "end": 2.171
+    },
+    {
+     "text": "into",
+     "start": 2.218,
+     "end": 2.415
+    },
+    {
+     "text": "about",
+     "start": 2.485,
+     "end": 2.752
+    },
+    {
+     "text": "$948",
+     "start": 2.798,
+     "end": 4.122
+    },
+    {
+     "text": "a",
+     "start": 4.168,
+     "end": 4.203
+    },
+    {
+     "text": "month",
+     "start": 4.261,
+     "end": 4.447
+    },
+    {
+     "text": "of",
+     "start": 4.481,
+     "end": 4.528
+    },
+    {
+     "text": "real",
+     "start": 4.574,
+     "end": 4.725
+    },
+    {
+     "text": "savings.",
+     "start": 4.783,
+     "end": 5.759
+    }
+   ]
+  },
+  {
+   "type": "lesson",
+   "props": {
+    "who": "jake",
+    "line1": "RICH ISN'T WHAT YOU EARN.",
+    "line2": "IT'S WHAT YOU KEEP",
+    "switchWord": "rich",
+    "vs": "wallet"
+   },
+   "text": "Rich isn't what you earn. It's what you keep.",
+   "audio": "is-100k-rich/s06-8a1bb2f205.mp3",
+   "from": 1247,
+   "durationInFrames": 92,
+   "words": [
+    {
+     "text": "Rich",
+     "start": 0.0,
+     "end": 0.279
+    },
+    {
+     "text": "isn't",
+     "start": 0.348,
+     "end": 0.673
+    },
+    {
+     "text": "what",
+     "start": 0.743,
+     "end": 0.906
+    },
+    {
+     "text": "you",
+     "start": 0.952,
+     "end": 1.045
+    },
+    {
+     "text": "earn.",
+     "start": 1.115,
+     "end": 1.474
+    },
+    {
+     "text": "It's",
+     "start": 1.533,
+     "end": 1.707
+    },
+    {
+     "text": "what",
+     "start": 1.753,
+     "end": 1.892
+    },
+    {
+     "text": "you",
+     "start": 1.939,
+     "end": 2.02
+    },
+    {
+     "text": "keep.",
+     "start": 2.09,
+     "end": 2.786
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "props": {
+    "who": "jake",
+    "button": "YOUR CITY?",
+    "disclaimer": "Example: single filer, 2026 federal tax, no state income tax (e.g. Texas). Costs vary by city. Not financial advice."
+   },
+   "text": "Is $100K rich where you live? Comment your city.",
+   "audio": "is-100k-rich/s07-f90e2e1609.mp3",
+   "from": 1339,
+   "durationInFrames": 105,
+   "words": [
+    {
+     "text": "Is",
+     "start": 0.0,
+     "end": 0.186
+    },
+    {
+     "text": "$100K",
+     "start": 0.232,
+     "end": 0.627
+    },
+    {
+     "text": "rich",
+     "start": 0.824,
+     "end": 1.01
+    },
+    {
+     "text": "where",
+     "start": 1.033,
+     "end": 1.161
+    },
+    {
+     "text": "you",
+     "start": 1.184,
+     "end": 1.254
+    },
+    {
+     "text": "live?",
+     "start": 1.312,
+     "end": 1.625
+    },
+    {
+     "text": "Comment",
+     "start": 2.032,
+     "end": 2.403
+    },
+    {
+     "text": "your",
+     "start": 2.438,
+     "end": 2.554
+    },
+    {
+     "text": "city.",
+     "start": 2.601,
+     "end": 3.204
+    }
+   ]
+  }
+ ]
+}
