@@ -1,0 +1,46 @@
+{
+  "id": "lump-sum-vs-monthly",
+  "title": "$500,000 today or $1,000 a month for life?",
+  "voice": "nPczCjzI2devNBz1zQrb",
+  "characters": {
+    "mike": { "name": "MIKE", "color": "#E5484D" },
+    "jake": { "name": "JAKE", "color": "#2E8B57" }
+  },
+  "scenes": [
+    {
+      "type": "choiceHook",
+      "text": "$500,000 today, or $1,000 a month for the rest of your life. Which one are you taking?",
+      "props": { "left": "$500,000", "leftSub": "TODAY", "right": "$1,000", "rightSub": "EVERY MONTH", "question": "WHICH ONE?", "badge": "FOR LIFE", "badgeWord": "life" }
+    },
+    {
+      "type": "pick",
+      "text": "Jake grabs the half million. Mike takes $1,000 a month. Safe. Forever.",
+      "props": { "rich": "jake", "poor": "mike", "grabWord": "grabs", "poorWord": "mike", "richTag": "$500,000", "poorTag": "$1,000/mo" }
+    },
+    {
+      "type": "formula",
+      "text": "Jake invests it, and only takes out 4% a year. That's $20,000 a year, or $1,667 a month.",
+      "props": { "title": "JAKE'S PAYCHECK", "parts": [ ["$500,000", "invests"], ["× 4%", "4%"], ["÷ 12", "$20,000"] ], "result": "$1,667/mo", "resultWord": "$1,667", "note": "AND THE $500K STAYS INVESTED" }
+    },
+    {
+      "type": "compareBars",
+      "text": "So Jake gets $1,667 a month. Mike gets $1,000.",
+      "props": { "title": "EVERY MONTH", "fmt": "mo", "bars": [ { "who": "mike", "value": 1000 }, { "who": "jake", "value": 1667 } ] }
+    },
+    {
+      "type": "flip",
+      "text": "And here's the trap. Mike's $1,000 never grows. With 3% inflation, in 25 years, it only buys what $478 buys today.",
+      "props": { "who": "mike", "header": "THE TRAP:", "headerValue": "3% INFLATION", "headerWord": "trap", "from": "$1,000", "to": "BUYS LIKE $478", "strikeWord": "inflation", "toWord": "$478" }
+    },
+    {
+      "type": "formula",
+      "text": "Want your own number? Take your monthly spending, times 300. Spend $4,000 a month? You need $1.2 million.",
+      "props": { "title": "YOUR NUMBER", "save": true, "parts": [ ["MONTHLY SPENDING", "spending"], ["× 300", "300"] ], "result": "$4K → $1.2M", "resultWord": "$1.2", "note": "THE 4% RULE", "noteWord": "million" }
+    },
+    {
+      "type": "cta",
+      "text": "So which did you pick? Lump sum, or monthly? Tell me below.",
+      "props": { "who": "jake", "button": "LUMP OR MONTHLY?", "disclaimer": "The 4% rule is a historical rule of thumb, not a guarantee. Example ignores taxes. Not financial advice." }
+    }
+  ]
+}

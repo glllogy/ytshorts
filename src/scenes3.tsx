@@ -37,17 +37,17 @@ const ChoiceHook: React.FC<SceneProps> = ({ scene }) => {
         </g>
       </Svg>
       <div style={{ position: "absolute", left: 0, width: 540, top: 330, textAlign: "center", fontFamily: FONT, fontWeight: 900, scale: String(sL) }}>
-        <div style={{ fontSize: 92, color: C.red, letterSpacing: -3 }}>{p.left}</div>
+        <div style={{ fontSize: Math.min(92, Math.floor(480 / (String(p.left).length * 0.62))), color: C.red, letterSpacing: -3 }}>{p.left}</div>
         <div style={{ fontSize: 46, color: C.ink }}>{p.leftSub}</div>
       </div>
       <div style={{ position: "absolute", left: 540, width: 540, top: 330, textAlign: "center", fontFamily: FONT, fontWeight: 900, scale: String(sR) }}>
-        <div style={{ fontSize: 120, color: C.green, letterSpacing: -3, lineHeight: 0.8 }}>{p.right}</div>
+        <div style={{ fontSize: Math.min(120, Math.floor(480 / (String(p.right).length * 0.62))), color: C.green, letterSpacing: -3, lineHeight: 0.8 }}>{p.right}</div>
         <div style={{ fontSize: 46, color: C.ink, marginTop: 18 }}>{p.rightSub}</div>
       </div>
       <div style={{ position: "absolute", left: 540, top: 620, translate: "-50% -50%", scale: String(sVs * pulse), background: C.ink, color: C.yellow, fontFamily: FONT, fontWeight: 900, fontSize: 80, width: 170, height: 170, borderRadius: 85, display: "flex", alignItems: "center", justifyContent: "center", border: `8px solid ${C.yellow}` }}>
         VS
       </div>
-      <Tag x={810} y={1010} at={w("30", 115)} text="30 DAYS" bg={C.green} size={56} rotate={-4} />
+      <Tag x={810} y={1010} at={w(p.badgeWord ?? "30", 115)} text={p.badge ?? "30 DAYS"} bg={C.green} size={56} rotate={-4} />
       <Tag x={540} y={1170} at={tWhich} text={p.question} bg={C.yellow} color={C.ink} size={84} rotate={-2} />
       <Sfx at={0} name="whoosh" volume={0.8} />
       <Sfx at={2} name="thud" />
@@ -61,7 +61,7 @@ const Pick: React.FC<SceneProps> = ({ scene, characters }) => {
   const frame = useCurrentFrame();
   const w = useWords(scene);
   const R = characters[scene.props.rich], P = characters[scene.props.poor];
-  const tGrab = w("grabs", 8), tJake = w("jake", 70), tStop = w("stop", 130);
+  const tGrab = w(scene.props.grabWord ?? "grabs", 8), tJake = w(scene.props.poorWord ?? "jake", 70), tStop = scene.props.laugh ? w("stop", 130) : 99999;
   const mikePose = usePoseTrack([[0, "idle"], [tGrab, "cheer"], [tStop, "pointRight"]]);
   const jakePose = usePoseTrack([[0, "idle"], [tJake, "present"]]);
   const sCoin = usePop(tJake + 8);
@@ -77,10 +77,10 @@ const Pick: React.FC<SceneProps> = ({ scene, characters }) => {
         <Stickman x={780} y={GROUND_Y} pose={jakePose} color={P.color} name={P.name} scale={1.15} mood={moodAt(frame, [[0, "neutral"], [tJake, "smug"]])} />
         {frame >= tJake + 8 && <Coin x={905} y={820} r={30 * sCoin} spin={frame / 5} />}
       </Svg>
-      <Tag x={330} y={430} at={tGrab + 6} text="$1,000,000" bg={C.red} size={62} rotate={-4} />
-      <Tag x={780} y={430} at={tJake + 8} text="1¢" bg={C.green} size={70} rotate={4} />
+      <Tag x={330} y={430} at={tGrab + 6} text={scene.props.richTag ?? "$1,000,000"} bg={scene.props.richTag ? C.green : C.red} size={62} rotate={-4} />
+      <Tag x={780} y={430} at={tJake + 8} text={scene.props.poorTag ?? "1¢"} bg={scene.props.poorTag ? C.blue : C.green} size={scene.props.poorTag ? 56 : 70} rotate={4} />
       {[0, 1, 2].map((i) => (
-        <Tag key={i} x={240 + i * 130} y={560 + (i % 2) * 60} at={tStop + i * 5} text={scene.props.laugh.split(" ")[i] ?? "HA"} bg={C.yellow} color={C.ink} size={48} rotate={i % 2 ? 8 : -8} />
+        <Tag key={i} x={240 + i * 130} y={560 + (i % 2) * 60} at={tStop + i * 5} text={(scene.props.laugh ?? "").split(" ")[i] ?? "HA"} bg={C.yellow} color={C.ink} size={48} rotate={i % 2 ? 8 : -8} />
       ))}
       <Sfx at={tGrab} name="whoosh" />
       <Sfx at={tGrab + 10} name="thud" />

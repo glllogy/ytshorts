@@ -175,7 +175,7 @@ const Flip: React.FC<SceneProps> = ({ scene, characters }) => {
       </div>
       {frame >= tTo && (
         <div style={{ position: "absolute", left: 0, right: 0, top: 590, display: "flex", justifyContent: "center" }}>
-          <div style={{ background: C.red, color: "#fff", fontFamily: FONT, fontWeight: 900, fontSize: 120, padding: "6px 40px", borderRadius: 24, border: `8px solid ${C.ink}`, rotate: "-3deg", scale: String(sTo) }}>{scene.props.to}</div>
+          <div style={{ background: C.red, color: "#fff", fontFamily: FONT, fontWeight: 900, fontSize: Math.min(120, Math.floor(860 / (String(scene.props.to).length * 0.7))), whiteSpace: "nowrap", padding: "6px 40px", borderRadius: 24, border: `8px solid ${C.ink}`, rotate: "-3deg", scale: String(sTo) }}>{scene.props.to}</div>
         </div>
       )}
       <Svg>
