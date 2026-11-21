@@ -4,6 +4,7 @@ import { C, FONT, GROUND_Y } from "./theme";
 import { Mood, POSES, Stickman } from "./components/Stickman";
 import { Bill, Coin } from "./components/Objects";
 import { ease, money, Stamp, Tag, Title, usePop } from "./components/ui";
+import { House } from "./scenes6";
 import { Ground, moodAt, Sfx, Svg, usePoseTrack, useWords } from "./scenes";
 import type { SceneProps } from "./types";
 
@@ -33,7 +34,7 @@ const ChoiceHook: React.FC<SceneProps> = ({ scene }) => {
           <MoneyStack x={270} y={980} n={10} s={1.5} />
         </g>
         <g transform={`translate(810,800) scale(${sR * coinGlow}) translate(-810,-800)`}>
-          <Coin x={810} y={800} r={90} spin={frame >= tPenny ? (frame - tPenny) / 4 : 0} />
+          {p.rightIcon === "house" ? <House x={810} y={930} color="#CDEBD7" s={0.6} /> : <Coin x={810} y={800} r={90} spin={frame >= tPenny ? (frame - tPenny) / 4 : 0} />}
         </g>
       </Svg>
       <div style={{ position: "absolute", left: 0, width: 540, top: 330, textAlign: "center", fontFamily: FONT, fontWeight: 900, scale: String(sL) }}>

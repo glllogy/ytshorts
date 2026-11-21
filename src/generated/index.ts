@@ -8,5 +8,6 @@ import s6 from "./minimum-payment-trap.json";
 import s7 from "./penny-vs-million.json";
 import s8 from "./rent-vs-buy.json";
 import s9 from "./saved-by-age.json";
+import s10 from "./wedding-vs-house.json";
 import type { Timeline } from "../types";
-export const stories = [s0, s1, s2, s3, s4, s5, s6, s7, s8, s9] as unknown as Timeline[];
+export const stories = [s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10] as unknown as Timeline[];

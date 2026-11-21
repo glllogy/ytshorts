@@ -1,0 +1,618 @@
+{
+ "id": "wedding-vs-house",
+ "seq": 11,
+ "title": "$34,200 wedding or a house down payment?",
+ "fps": 30,
+ "characters": {
+  "mike": {
+   "name": "MIKE",
+   "color": "#E5484D"
+  },
+  "jake": {
+   "name": "JAKE",
+   "color": "#2E8B57"
+  }
+ },
+ "durationInFrames": 1370,
+ "scenes": [
+  {
+   "type": "choiceHook",
+   "props": {
+    "left": "$34,200",
+    "leftSub": "ONE DAY",
+    "right": "HOME",
+    "rightSub": "DOWN PAYMENT",
+    "question": "WHICH ONE?",
+    "badge": "SAME MONEY",
+    "badgeWord": "down",
+    "rightIcon": "house"
+   },
+   "text": "The average American wedding now costs $34,200. That's one day... or a down payment on a home. Which would you pick?",
+   "audio": "wedding-vs-house/s01-6d96cdca20.mp3",
+   "from": 0,
+   "durationInFrames": 272,
+   "words": [
+    {
+     "text": "The",
+     "start": 0.0,
+     "end": 0.163
+    },
+    {
+     "text": "average",
+     "start": 0.221,
+     "end": 0.511
+    },
+    {
+     "text": "American",
+     "start": 0.546,
+     "end": 0.929
+    },
+    {
+     "text": "wedding",
+     "start": 0.964,
+     "end": 1.196
+    },
+    {
+     "text": "now",
+     "start": 1.231,
+     "end": 1.358
+    },
+    {
+     "text": "costs",
+     "start": 1.428,
+     "end": 1.765
+    },
+    {
+     "text": "$34,200.",
+     "start": 1.869,
+     "end": 3.564
+    },
+    {
+     "text": "That's",
+     "start": 3.866,
+     "end": 4.145
+    },
+    {
+     "text": "one",
+     "start": 4.249,
+     "end": 4.47
+    },
+    {
+     "text": "day...",
+     "start": 4.516,
+     "end": 5.004
+    },
+    {
+     "text": "or",
+     "start": 5.306,
+     "end": 5.468
+    },
+    {
+     "text": "a",
+     "start": 5.526,
+     "end": 5.561
+    },
+    {
+     "text": "down",
+     "start": 5.631,
+     "end": 5.875
+    },
+    {
+     "text": "payment",
+     "start": 5.944,
+     "end": 6.316
+    },
+    {
+     "text": "on",
+     "start": 6.385,
+     "end": 6.49
+    },
+    {
+     "text": "a",
+     "start": 6.536,
+     "end": 6.571
+    },
+    {
+     "text": "home.",
+     "start": 6.629,
+     "end": 7.024
+    },
+    {
+     "text": "Which",
+     "start": 7.43,
+     "end": 7.628
+    },
+    {
+     "text": "would",
+     "start": 7.663,
+     "end": 7.79
+    },
+    {
+     "text": "you",
+     "start": 7.825,
+     "end": 7.895
+    },
+    {
+     "text": "pick?",
+     "start": 7.953,
+     "end": 8.777
+    }
+   ]
+  },
+  {
+   "type": "factsList",
+   "props": {
+    "who": "mike",
+    "title": "WHERE IT GOES",
+    "facts": [
+     {
+      "word": "117",
+      "label": "117 GUESTS"
+     },
+     {
+      "word": "$292",
+      "label": "$292 PER GUEST"
+     },
+     {
+      "word": "$12,900",
+      "label": "VENUE $12,900"
+     },
+     {
+      "word": "$5,700",
+      "label": "$5,700 / HOUR"
+     }
+    ]
+   },
+   "text": "The average guest list is 117 people. That's $292 per guest. The venue alone: $12,900. For a 6-hour party, about $5,700 an hour.",
+   "audio": "wedding-vs-house/s02-caeffd0ab2.mp3",
+   "from": 272,
+   "durationInFrames": 403,
+   "words": [
+    {
+     "text": "The",
+     "start": 0.0,
+     "end": 0.139
+    },
+    {
+     "text": "average",
+     "start": 0.197,
+     "end": 0.499
+    },
+    {
+     "text": "guest",
+     "start": 0.534,
+     "end": 0.731
+    },
+    {
+     "text": "list",
+     "start": 0.789,
+     "end": 0.975
+    },
+    {
+     "text": "is",
+     "start": 1.022,
+     "end": 1.103
+    },
+    {
+     "text": "117",
+     "start": 1.173,
+     "end": 2.299
+    },
+    {
+     "text": "people.",
+     "start": 2.368,
+     "end": 2.786
+    },
+    {
+     "text": "That's",
+     "start": 3.042,
+     "end": 3.309
+    },
+    {
+     "text": "$292",
+     "start": 3.367,
+     "end": 4.783
+    },
+    {
+     "text": "per",
+     "start": 4.865,
+     "end": 4.969
+    },
+    {
+     "text": "guest.",
+     "start": 5.016,
+     "end": 5.399
+    },
+    {
+     "text": "The",
+     "start": 5.759,
+     "end": 5.875
+    },
+    {
+     "text": "venue",
+     "start": 5.921,
+     "end": 6.177
+    },
+    {
+     "text": "alone:",
+     "start": 6.2,
+     "end": 6.629
+    },
+    {
+     "text": "$12,900.",
+     "start": 6.931,
+     "end": 8.684
+    },
+    {
+     "text": "For",
+     "start": 8.905,
+     "end": 9.067
+    },
+    {
+     "text": "a",
+     "start": 9.114,
+     "end": 9.149
+    },
+    {
+     "text": "6-hour",
+     "start": 9.23,
+     "end": 9.683
+    },
+    {
+     "text": "party,",
+     "start": 9.752,
+     "end": 10.217
+    },
+    {
+     "text": "about",
+     "start": 10.356,
+     "end": 10.646
+    },
+    {
+     "text": "$5,700",
+     "start": 10.704,
+     "end": 12.19
+    },
+    {
+     "text": "an",
+     "start": 12.237,
+     "end": 12.295
+    },
+    {
+     "text": "hour.",
+     "start": 12.33,
+     "end": 13.142
+    }
+   ]
+  },
+  {
+   "type": "duo",
+   "props": {
+    "title": "SAME LOVE",
+    "both": "ENGAGED",
+    "left": "mike",
+    "right": "jake",
+    "leftTag": "$34,200",
+    "leftWord": "all",
+    "rightTag": "$10,000",
+    "rightWord": "$10,000",
+    "sub": "1 IN 4: UNDER $12K",
+    "subWord": "quarter"
+   },
+   "text": "Mike goes all in: $34,200. Jake has a $10,000 wedding. And a quarter of couples spend $12,000 or less.",
+   "audio": "wedding-vs-house/s03-416958f825.mp3",
+   "from": 675,
+   "durationInFrames": 271,
+   "words": [
+    {
+     "text": "Mike",
+     "start": 0.0,
+     "end": 0.244
+    },
+    {
+     "text": "goes",
+     "start": 0.279,
+     "end": 0.476
+    },
+    {
+     "text": "all",
+     "start": 0.522,
+     "end": 0.697
+    },
+    {
+     "text": "in:",
+     "start": 0.766,
+     "end": 1.068
+    },
+    {
+     "text": "$34,200.",
+     "start": 1.37,
+     "end": 3.111
+    },
+    {
+     "text": "Jake",
+     "start": 3.367,
+     "end": 3.622
+    },
+    {
+     "text": "has",
+     "start": 3.646,
+     "end": 3.808
+    },
+    {
+     "text": "a",
+     "start": 3.866,
+     "end": 3.901
+    },
+    {
+     "text": "$10,000",
+     "start": 3.971,
+     "end": 4.795
+    },
+    {
+     "text": "wedding.",
+     "start": 4.865,
+     "end": 5.283
+    },
+    {
+     "text": "And",
+     "start": 5.503,
+     "end": 5.654
+    },
+    {
+     "text": "a",
+     "start": 5.7,
+     "end": 5.724
+    },
+    {
+     "text": "quarter",
+     "start": 5.793,
+     "end": 6.072
+    },
+    {
+     "text": "of",
+     "start": 6.107,
+     "end": 6.153
+    },
+    {
+     "text": "couples",
+     "start": 6.223,
+     "end": 6.548
+    },
+    {
+     "text": "spend",
+     "start": 6.571,
+     "end": 6.815
+    },
+    {
+     "text": "$12,000",
+     "start": 6.861,
+     "end": 7.732
+    },
+    {
+     "text": "or",
+     "start": 7.779,
+     "end": 7.848
+    },
+    {
+     "text": "less.",
+     "start": 7.918,
+     "end": 8.731
+    }
+   ]
+  },
+  {
+   "type": "investResult",
+   "props": {
+    "who": "jake",
+    "to": 184217,
+    "label": "JAKE'S $24,200",
+    "startWord": "invests",
+    "endWord": "$184",
+    "rateWord": "7%",
+    "rateLabel": "~7% / year"
+   },
+   "text": "Jake invests the $24,200 difference. In 30 years at 7%, that's about $184,000.",
+   "audio": "wedding-vs-house/s04-6e62d9f50c.mp3",
+   "from": 946,
+   "durationInFrames": 208,
+   "words": [
+    {
+     "text": "Jake",
+     "start": 0.0,
+     "end": 0.255
+    },
+    {
+     "text": "invests",
+     "start": 0.29,
+     "end": 0.592
+    },
+    {
+     "text": "the",
+     "start": 0.615,
+     "end": 0.685
+    },
+    {
+     "text": "$24,200",
+     "start": 0.72,
+     "end": 1.823
+    },
+    {
+     "text": "difference.",
+     "start": 1.881,
+     "end": 2.345
+    },
+    {
+     "text": "In",
+     "start": 2.543,
+     "end": 2.682
+    },
+    {
+     "text": "30",
+     "start": 2.786,
+     "end": 3.019
+    },
+    {
+     "text": "years",
+     "start": 3.077,
+     "end": 3.32
+    },
+    {
+     "text": "at",
+     "start": 3.367,
+     "end": 3.448
+    },
+    {
+     "text": "7%,",
+     "start": 3.529,
+     "end": 4.191
+    },
+    {
+     "text": "that's",
+     "start": 4.214,
+     "end": 4.4
+    },
+    {
+     "text": "about",
+     "start": 4.423,
+     "end": 4.621
+    },
+    {
+     "text": "$184,000.",
+     "start": 4.644,
+     "end": 6.641
+    }
+   ]
+  },
+  {
+   "type": "lesson",
+   "props": {
+    "who": "jake",
+    "line1": "SPEND ON THE MARRIAGE",
+    "line2": "NOT THE WEDDING",
+    "switchWord": "spend",
+    "vs": "wallet"
+   },
+   "text": "So spend on the marriage, not just the wedding.",
+   "audio": "wedding-vs-house/s05-1b6f0f9b85.mp3",
+   "from": 1154,
+   "durationInFrames": 90,
+   "words": [
+    {
+     "text": "So",
+     "start": 0.0,
+     "end": 0.151
+    },
+    {
+     "text": "spend",
+     "start": 0.209,
+     "end": 0.499
+    },
+    {
+     "text": "on",
+     "start": 0.569,
+     "end": 0.65
+    },
+    {
+     "text": "the",
+     "start": 0.685,
+     "end": 0.755
+    },
+    {
+     "text": "marriage,",
+     "start": 0.801,
+     "end": 1.254
+    },
+    {
+     "text": "not",
+     "start": 1.416,
+     "end": 1.591
+    },
+    {
+     "text": "just",
+     "start": 1.649,
+     "end": 1.834
+    },
+    {
+     "text": "the",
+     "start": 1.869,
+     "end": 1.939
+    },
+    {
+     "text": "wedding.",
+     "start": 1.985,
+     "end": 2.694
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "props": {
+    "who": "jake",
+    "button": "BIG OR SMALL?",
+    "disclaimer": "Avg cost: The Knot 2026 Real Weddings Study. Investing example assumes ~7%/yr, not guaranteed. Not financial advice."
+   },
+   "text": "Big wedding or small wedding? Fight it out in the comments.",
+   "audio": "wedding-vs-house/s06-6da691e10f.mp3",
+   "from": 1244,
+   "durationInFrames": 96,
+   "words": [
+    {
+     "text": "Big",
+     "start": 0.0,
+     "end": 0.244
+    },
+    {
+     "text": "wedding",
+     "start": 0.302,
+     "end": 0.557
+    },
+    {
+     "text": "or",
+     "start": 0.604,
+     "end": 0.673
+    },
+    {
+     "text": "small",
+     "start": 0.72,
+     "end": 0.964
+    },
+    {
+     "text": "wedding?",
+     "start": 1.01,
+     "end": 1.347
+    },
+    {
+     "text": "Fight",
+     "start": 1.509,
+     "end": 1.765
+    },
+    {
+     "text": "it",
+     "start": 1.8,
+     "end": 1.858
+    },
+    {
+     "text": "out",
+     "start": 1.892,
+     "end": 2.009
+    },
+    {
+     "text": "in",
+     "start": 2.032,
+     "end": 2.078
+    },
+    {
+     "text": "the",
+     "start": 2.101,
+     "end": 2.171
+    },
+    {
+     "text": "comments.",
+     "start": 2.206,
+     "end": 2.926
+    }
+   ]
+  }
+ ]
+}

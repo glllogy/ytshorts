@@ -7,7 +7,7 @@ import { ease, Tag, Title, usePop } from "./components/ui";
 import { Ground, moodAt, Sfx, Svg, usePoseTrack, useWords } from "./scenes";
 import type { SceneProps } from "./types";
 
-const House: React.FC<{ x: number; y: number; color: string; sign?: string; s?: number }> = ({ x, y, color, sign, s = 1 }) => (
+export const House: React.FC<{ x: number; y: number; color: string; sign?: string; s?: number }> = ({ x, y, color, sign, s = 1 }) => (
   <g transform={`translate(${x},${y}) scale(${s})`}>
     <ellipse cx={0} cy={4} rx={200} ry={14} fill="rgba(0,0,0,0.12)" />
     <rect x={-160} y={-250} width={320} height={250} fill={color} stroke={C.ink} strokeWidth={9} />
