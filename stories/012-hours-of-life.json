@@ -1,0 +1,69 @@
+{
+  "id": "hours-of-life",
+  "title": "How many hours of your life do these sneakers cost?",
+  "voice": "nPczCjzI2devNBz1zQrb",
+  "characters": {
+    "mike": { "name": "MIKE", "color": "#E5484D" },
+    "jake": { "name": "JAKE", "color": "#2E8B57" }
+  },
+  "scenes": [
+    {
+      "type": "priceHook",
+      "text": "These sneakers cost $150. But that's not the real price. The real price is 9 hours of your life.",
+      "props": { "price": "$150", "answer": "9 HOURS", "answerWord": "9", "notWord": "not" }
+    },
+    {
+      "type": "formula",
+      "text": "Mike makes $25 an hour. So he thinks, $150 divided by 25? That's 6 hours. Wrong.",
+      "props": { "title": "MIKE'S MATH", "parts": [ ["$150", "$150"], ["÷ $25 / HOUR", "divided"] ], "result": "6 HOURS", "resultWord": "6", "note": "WRONG", "noteWord": "wrong" }
+    },
+    {
+      "type": "spendAll",
+      "text": "Look at his real week. He earns $1,000. Taxes take about $155. Gas and parking, $40. Lunches at work, $50. He keeps $755.",
+      "props": { "who": "mike", "header": "MIKE'S REAL WEEK", "start": 1000, "items": [
+        { "word": "taxes", "label": "TAXES", "amount": 155 },
+        { "word": "gas", "label": "GAS", "amount": 40 },
+        { "word": "lunches", "label": "LUNCHES", "amount": 50 }
+      ] }
+    },
+    {
+      "type": "factsList",
+      "text": "And he doesn't work 40 hours. Add the commute and getting ready, and it's 47 and a half.",
+      "props": { "who": "mike", "title": "REAL HOURS", "facts": [
+        { "word": "40", "label": "40 HRS PAID" },
+        { "word": "commute", "label": "+5 HRS COMMUTE" },
+        { "word": "ready", "label": "+2.5 HRS GETTING READY" },
+        { "word": "47", "label": "= 47.5 HOURS" }
+      ] }
+    },
+    {
+      "type": "formula",
+      "text": "$755 divided by 47 and a half hours. His real wage is about $16 an hour. Not $25.",
+      "props": { "title": "REAL WAGE", "parts": [ ["$755", "$755"], ["÷ 47.5 HOURS", "divided"] ], "result": "$16 / HOUR", "resultWord": "$16", "note": "NOT $25", "noteWord": "not" }
+    },
+    {
+      "type": "factsList",
+      "text": "So the sneakers cost 9 hours. A new iPhone, 75 hours. A $40,000 car? A whole year of his life.",
+      "props": { "who": "mike", "title": "PRICE IN HOURS", "facts": [
+        { "word": "sneakers", "label": "SNEAKERS = 9 HRS" },
+        { "word": "iphone", "label": "IPHONE = 75 HRS" },
+        { "word": "car", "label": "$40K CAR = 1 YEAR" }
+      ] }
+    },
+    {
+      "type": "lesson",
+      "text": "Jake asks one question before every purchase. Is this worth that many hours of my life?",
+      "props": { "who": "jake", "line1": "IS IT WORTH", "line2": "X HOURS OF MY LIFE?", "switchWord": "worth", "vs": "wallet" }
+    },
+    {
+      "type": "formula",
+      "text": "Save this formula. Price, divided by your real hourly wage, equals hours of your life.",
+      "props": { "title": "SAVE THIS", "save": true, "parts": [ ["PRICE", "price"], ["÷ REAL HOURLY WAGE", "divided"] ], "result": "= HOURS OF LIFE", "resultWord": "equals", "note": "USE IT BEFORE YOU BUY" }
+    },
+    {
+      "type": "cta",
+      "text": "Send this to the friend who always says, it's only fifty bucks.",
+      "props": { "who": "jake", "button": "SEND TO A FRIEND", "disclaimer": "Example: $25/hr, single filer, ~15.5% federal tax + FICA, no state tax. Your numbers will differ." }
+    }
+  ]
+}
