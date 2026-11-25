@@ -1,0 +1,857 @@
+{
+ "id": "bank-has-no-money",
+ "seq": 13,
+ "theme": "sunset",
+ "title": "Your money isn't actually in your bank",
+ "fps": 30,
+ "characters": {
+  "mike": {
+   "name": "MIKE",
+   "color": "#E5484D"
+  },
+  "jake": {
+   "name": "JAKE",
+   "color": "#2E8B57"
+  }
+ },
+ "durationInFrames": 1586,
+ "scenes": [
+  {
+   "type": "bankHook",
+   "props": {
+    "line1": "YOUR MONEY",
+    "line2": "ISN'T IN THE BANK",
+    "emptyWord": "isn't",
+    "whatWord": "really"
+   },
+   "text": "Your money isn't actually in your bank. Here's what really happens to it.",
+   "audio": "bank-has-no-money/s01-77c8d455fe.mp3",
+   "from": 0,
+   "durationInFrames": 119,
+   "words": [
+    {
+     "text": "Your",
+     "start": 0.0,
+     "end": 0.221
+    },
+    {
+     "text": "money",
+     "start": 0.302,
+     "end": 0.534
+    },
+    {
+     "text": "isn't",
+     "start": 0.569,
+     "end": 0.778
+    },
+    {
+     "text": "actually",
+     "start": 0.813,
+     "end": 1.08
+    },
+    {
+     "text": "in",
+     "start": 1.103,
+     "end": 1.149
+    },
+    {
+     "text": "your",
+     "start": 1.184,
+     "end": 1.277
+    },
+    {
+     "text": "bank.",
+     "start": 1.324,
+     "end": 1.66
+    },
+    {
+     "text": "Here's",
+     "start": 2.02,
+     "end": 2.252
+    },
+    {
+     "text": "what",
+     "start": 2.287,
+     "end": 2.403
+    },
+    {
+     "text": "really",
+     "start": 2.461,
+     "end": 2.682
+    },
+    {
+     "text": "happens",
+     "start": 2.74,
+     "end": 3.088
+    },
+    {
+     "text": "to",
+     "start": 3.135,
+     "end": 3.204
+    },
+    {
+     "text": "it.",
+     "start": 3.286,
+     "end": 3.669
+    }
+   ]
+  },
+  {
+   "type": "lendChain",
+   "props": {
+    "steps": [
+     {
+      "word": "deposits",
+      "label": "MIKE DEPOSITS",
+      "amount": "$1,000",
+      "color": "#E5484D",
+      "acc": 1000
+     },
+     {
+      "word": "keeps",
+      "label": "BANK KEEPS",
+      "amount": "$100",
+      "color": "#1B1B1F"
+     },
+     {
+      "word": "lends",
+      "label": "LOAN TO JAKE",
+      "amount": "$900",
+      "color": "#2E8B57"
+     },
+     {
+      "word": "dealer",
+      "label": "DEALER DEPOSITS",
+      "amount": "$900",
+      "color": "#3B82F6",
+      "acc": 1900
+     },
+     {
+      "word": "again",
+      "label": "LOANED AGAIN",
+      "amount": "$810",
+      "color": "#2E8B57"
+     }
+    ]
+   },
+   "text": "Mike deposits $1,000. The bank keeps a little, say 10%, and lends $900 to Jake for a car. The dealer deposits that $900... and the bank lends most of it out again.",
+   "audio": "bank-has-no-money/s02-b52ee31cc1.mp3",
+   "from": 119,
+   "durationInFrames": 350,
+   "words": [
+    {
+     "text": "Mike",
+     "start": 0.0,
+     "end": 0.244
+    },
+    {
+     "text": "deposits",
+     "start": 0.279,
+     "end": 0.755
+    },
+    {
+     "text": "$1,000.",
+     "start": 0.813,
+     "end": 1.683
+    },
+    {
+     "text": "The",
+     "start": 1.718,
+     "end": 1.811
+    },
+    {
+     "text": "bank",
+     "start": 1.869,
+     "end": 2.043
+    },
+    {
+     "text": "keeps",
+     "start": 2.09,
+     "end": 2.322
+    },
+    {
+     "text": "a",
+     "start": 2.368,
+     "end": 2.392
+    },
+    {
+     "text": "little,",
+     "start": 2.45,
+     "end": 2.752
+    },
+    {
+     "text": "say",
+     "start": 2.914,
+     "end": 3.1
+    },
+    {
+     "text": "10%,",
+     "start": 3.17,
+     "end": 3.878
+    },
+    {
+     "text": "and",
+     "start": 4.075,
+     "end": 4.214
+    },
+    {
+     "text": "lends",
+     "start": 4.272,
+     "end": 4.505
+    },
+    {
+     "text": "$900",
+     "start": 4.54,
+     "end": 5.236
+    },
+    {
+     "text": "to",
+     "start": 5.294,
+     "end": 5.364
+    },
+    {
+     "text": "Jake",
+     "start": 5.433,
+     "end": 5.619
+    },
+    {
+     "text": "for",
+     "start": 5.642,
+     "end": 5.735
+    },
+    {
+     "text": "a",
+     "start": 5.782,
+     "end": 5.805
+    },
+    {
+     "text": "car.",
+     "start": 5.851,
+     "end": 6.235
+    },
+    {
+     "text": "The",
+     "start": 6.594,
+     "end": 6.722
+    },
+    {
+     "text": "dealer",
+     "start": 6.78,
+     "end": 7.036
+    },
+    {
+     "text": "deposits",
+     "start": 7.094,
+     "end": 7.593
+    },
+    {
+     "text": "that",
+     "start": 7.639,
+     "end": 7.825
+    },
+    {
+     "text": "$900...",
+     "start": 7.895,
+     "end": 8.754
+    },
+    {
+     "text": "and",
+     "start": 8.975,
+     "end": 9.114
+    },
+    {
+     "text": "the",
+     "start": 9.16,
+     "end": 9.23
+    },
+    {
+     "text": "bank",
+     "start": 9.276,
+     "end": 9.462
+    },
+    {
+     "text": "lends",
+     "start": 9.532,
+     "end": 9.729
+    },
+    {
+     "text": "most",
+     "start": 9.799,
+     "end": 10.019
+    },
+    {
+     "text": "of",
+     "start": 10.077,
+     "end": 10.124
+    },
+    {
+     "text": "it",
+     "start": 10.17,
+     "end": 10.228
+    },
+    {
+     "text": "out",
+     "start": 10.275,
+     "end": 10.391
+    },
+    {
+     "text": "again.",
+     "start": 10.426,
+     "end": 11.378
+    }
+   ]
+  },
+  {
+   "type": "breakdown",
+   "props": {
+    "aWord": "accounts",
+    "bWord": "$2,710",
+    "parts": [
+     {
+      "label": "REAL CASH",
+      "value": 1000,
+      "color": "#22C55E"
+     },
+     {
+      "label": "CREATED BY LOANS",
+      "value": 1710,
+      "color": "#3B82F6"
+     }
+    ]
+   },
+   "text": "After just three rounds, accounts show $2,710. But there's still only $1,000 of real cash.",
+   "audio": "bank-has-no-money/s03-ccf306b4ac.mp3",
+   "from": 469,
+   "durationInFrames": 214,
+   "words": [
+    {
+     "text": "After",
+     "start": 0.0,
+     "end": 0.325
+    },
+    {
+     "text": "just",
+     "start": 0.395,
+     "end": 0.604
+    },
+    {
+     "text": "three",
+     "start": 0.65,
+     "end": 0.894
+    },
+    {
+     "text": "rounds,",
+     "start": 0.952,
+     "end": 1.312
+    },
+    {
+     "text": "accounts",
+     "start": 1.335,
+     "end": 1.683
+    },
+    {
+     "text": "show",
+     "start": 1.707,
+     "end": 1.858
+    },
+    {
+     "text": "$2,710.",
+     "start": 1.927,
+     "end": 3.622
+    },
+    {
+     "text": "But",
+     "start": 3.843,
+     "end": 3.982
+    },
+    {
+     "text": "there's",
+     "start": 4.005,
+     "end": 4.191
+    },
+    {
+     "text": "still",
+     "start": 4.214,
+     "end": 4.4
+    },
+    {
+     "text": "only",
+     "start": 4.458,
+     "end": 4.632
+    },
+    {
+     "text": "$1,000",
+     "start": 4.679,
+     "end": 5.561
+    },
+    {
+     "text": "of",
+     "start": 5.608,
+     "end": 5.677
+    },
+    {
+     "text": "real",
+     "start": 5.735,
+     "end": 5.921
+    },
+    {
+     "text": "cash.",
+     "start": 5.968,
+     "end": 6.827
+    }
+   ]
+  },
+  {
+   "type": "bankRun",
+   "props": {
+    "dateWord": "march",
+    "date": "MARCH 2023",
+    "amountWord": "$42",
+    "dayWord": "single",
+    "shutWord": "shut",
+    "name": "SILICON VALLEY BANK"
+   },
+   "text": "So what if everyone wants their money at once? In March 2023, Silicon Valley Bank customers tried to pull out $42 billion in a single day. The next morning, the bank was shut down.",
+   "audio": "bank-has-no-money/s04-ccb25932f0.mp3",
+   "from": 683,
+   "durationInFrames": 366,
+   "words": [
+    {
+     "text": "So",
+     "start": 0.0,
+     "end": 0.163
+    },
+    {
+     "text": "what",
+     "start": 0.221,
+     "end": 0.337
+    },
+    {
+     "text": "if",
+     "start": 0.372,
+     "end": 0.441
+    },
+    {
+     "text": "everyone",
+     "start": 0.522,
+     "end": 0.952
+    },
+    {
+     "text": "wants",
+     "start": 0.987,
+     "end": 1.207
+    },
+    {
+     "text": "their",
+     "start": 1.242,
+     "end": 1.382
+    },
+    {
+     "text": "money",
+     "start": 1.416,
+     "end": 1.579
+    },
+    {
+     "text": "at",
+     "start": 1.614,
+     "end": 1.672
+    },
+    {
+     "text": "once?",
+     "start": 1.741,
+     "end": 2.113
+    },
+    {
+     "text": "In",
+     "start": 2.589,
+     "end": 2.728
+    },
+    {
+     "text": "March",
+     "start": 2.81,
+     "end": 3.1
+    },
+    {
+     "text": "2023,",
+     "start": 3.17,
+     "end": 4.145
+    },
+    {
+     "text": "Silicon",
+     "start": 4.342,
+     "end": 4.899
+    },
+    {
+     "text": "Valley",
+     "start": 4.969,
+     "end": 5.236
+    },
+    {
+     "text": "Bank",
+     "start": 5.283,
+     "end": 5.48
+    },
+    {
+     "text": "customers",
+     "start": 5.538,
+     "end": 6.014
+    },
+    {
+     "text": "tried",
+     "start": 6.049,
+     "end": 6.246
+    },
+    {
+     "text": "to",
+     "start": 6.269,
+     "end": 6.316
+    },
+    {
+     "text": "pull",
+     "start": 6.362,
+     "end": 6.525
+    },
+    {
+     "text": "out",
+     "start": 6.571,
+     "end": 6.699
+    },
+    {
+     "text": "$42",
+     "start": 6.745,
+     "end": 7.233
+    },
+    {
+     "text": "billion",
+     "start": 7.303,
+     "end": 7.872
+    },
+    {
+     "text": "in",
+     "start": 8.173,
+     "end": 8.301
+    },
+    {
+     "text": "a",
+     "start": 8.348,
+     "end": 8.382
+    },
+    {
+     "text": "single",
+     "start": 8.452,
+     "end": 8.789
+    },
+    {
+     "text": "day.",
+     "start": 8.824,
+     "end": 9.218
+    },
+    {
+     "text": "The",
+     "start": 9.578,
+     "end": 9.694
+    },
+    {
+     "text": "next",
+     "start": 9.741,
+     "end": 9.927
+    },
+    {
+     "text": "morning,",
+     "start": 9.996,
+     "end": 10.344
+    },
+    {
+     "text": "the",
+     "start": 10.414,
+     "end": 10.519
+    },
+    {
+     "text": "bank",
+     "start": 10.577,
+     "end": 10.751
+    },
+    {
+     "text": "was",
+     "start": 10.797,
+     "end": 10.902
+    },
+    {
+     "text": "shut",
+     "start": 10.948,
+     "end": 11.146
+    },
+    {
+     "text": "down.",
+     "start": 11.204,
+     "end": 11.889
+    }
+   ]
+  },
+  {
+   "type": "formula",
+   "props": {
+    "title": "SAVE THIS",
+    "save": true,
+    "parts": [
+     [
+      "$250,000",
+      "$250,000"
+     ],
+     [
+      "PER PERSON",
+      "person"
+     ],
+     [
+      "PER BANK",
+      "bank",
+      0
+     ],
+     [
+      "PER ACCOUNT TYPE",
+      "type"
+     ]
+    ],
+    "result": "INSURED",
+    "resultWord": "type",
+    "note": "CHECK FDIC.GOV"
+   },
+   "text": "That's why you need this number. FDIC insurance covers $250,000 per person, per bank, per account type.",
+   "audio": "bank-has-no-money/s05-b01dd2dcb5.mp3",
+   "from": 1049,
+   "durationInFrames": 253,
+   "words": [
+    {
+     "text": "That's",
+     "start": 0.0,
+     "end": 0.279
+    },
+    {
+     "text": "why",
+     "start": 0.313,
+     "end": 0.464
+    },
+    {
+     "text": "you",
+     "start": 0.534,
+     "end": 0.615
+    },
+    {
+     "text": "need",
+     "start": 0.685,
+     "end": 0.848
+    },
+    {
+     "text": "this",
+     "start": 0.882,
+     "end": 0.987
+    },
+    {
+     "text": "number.",
+     "start": 1.057,
+     "end": 1.498
+    },
+    {
+     "text": "FDIC",
+     "start": 2.055,
+     "end": 2.554
+    },
+    {
+     "text": "insurance",
+     "start": 2.659,
+     "end": 3.065
+    },
+    {
+     "text": "covers",
+     "start": 3.1,
+     "end": 3.39
+    },
+    {
+     "text": "$250,000",
+     "start": 3.471,
+     "end": 4.981
+    },
+    {
+     "text": "per",
+     "start": 5.039,
+     "end": 5.155
+    },
+    {
+     "text": "person,",
+     "start": 5.201,
+     "end": 5.642
+    },
+    {
+     "text": "per",
+     "start": 5.863,
+     "end": 6.014
+    },
+    {
+     "text": "bank,",
+     "start": 6.06,
+     "end": 6.444
+    },
+    {
+     "text": "per",
+     "start": 6.745,
+     "end": 6.908
+    },
+    {
+     "text": "account",
+     "start": 6.954,
+     "end": 7.279
+    },
+    {
+     "text": "type.",
+     "start": 7.314,
+     "end": 8.127
+    }
+   ]
+  },
+  {
+   "type": "lesson",
+   "props": {
+    "who": "jake",
+    "line1": "OVER $250K?",
+    "line2": "SPLIT IT UP",
+    "switchWord": "split",
+    "vs": "wallet"
+   },
+   "text": "Jake's rule: more than $250,000 saved? Split it across banks.",
+   "audio": "bank-has-no-money/s06-0820a6aa66.mp3",
+   "from": 1302,
+   "durationInFrames": 155,
+   "words": [
+    {
+     "text": "Jake's",
+     "start": 0.0,
+     "end": 0.29
+    },
+    {
+     "text": "rule:",
+     "start": 0.325,
+     "end": 0.569
+    },
+    {
+     "text": "more",
+     "start": 0.604,
+     "end": 0.731
+    },
+    {
+     "text": "than",
+     "start": 0.766,
+     "end": 0.894
+    },
+    {
+     "text": "$250,000",
+     "start": 0.952,
+     "end": 2.345
+    },
+    {
+     "text": "saved?",
+     "start": 2.415,
+     "end": 2.879
+    },
+    {
+     "text": "Split",
+     "start": 3.239,
+     "end": 3.529
+    },
+    {
+     "text": "it",
+     "start": 3.564,
+     "end": 3.634
+    },
+    {
+     "text": "across",
+     "start": 3.669,
+     "end": 3.959
+    },
+    {
+     "text": "banks.",
+     "start": 4.029,
+     "end": 4.876
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "props": {
+    "who": "jake",
+    "button": "DID YOU KNOW?",
+    "disclaimer": "Simplified example. US reserve requirement: 0% since 2020. Not financial advice."
+   },
+   "text": "Did you know your bank works like this? Tell me in the comments.",
+   "audio": "bank-has-no-money/s07-72813626f8.mp3",
+   "from": 1457,
+   "durationInFrames": 99,
+   "words": [
+    {
+     "text": "Did",
+     "start": 0.0,
+     "end": 0.186
+    },
+    {
+     "text": "you",
+     "start": 0.221,
+     "end": 0.29
+    },
+    {
+     "text": "know",
+     "start": 0.313,
+     "end": 0.406
+    },
+    {
+     "text": "your",
+     "start": 0.453,
+     "end": 0.557
+    },
+    {
+     "text": "bank",
+     "start": 0.604,
+     "end": 0.778
+    },
+    {
+     "text": "works",
+     "start": 0.824,
+     "end": 1.01
+    },
+    {
+     "text": "like",
+     "start": 1.045,
+     "end": 1.173
+    },
+    {
+     "text": "this?",
+     "start": 1.196,
+     "end": 1.521
+    },
+    {
+     "text": "Tell",
+     "start": 1.823,
+     "end": 2.009
+    },
+    {
+     "text": "me",
+     "start": 2.055,
+     "end": 2.101
+    },
+    {
+     "text": "in",
+     "start": 2.136,
+     "end": 2.183
+    },
+    {
+     "text": "the",
+     "start": 2.206,
+     "end": 2.276
+    },
+    {
+     "text": "comments.",
+     "start": 2.31,
+     "end": 3.019
+    }
+   ]
+  }
+ ]
+}

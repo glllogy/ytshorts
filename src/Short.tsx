@@ -21,10 +21,19 @@ const SceneShell: React.FC<{ scene: SceneData; children: React.ReactNode; first?
   );
 };
 
+const Progress: React.FC<{ total: number }> = ({ total }) => {
+  const frame = useCurrentFrame();
+  return (
+    <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 14, background: "rgba(27,27,31,0.15)" }}>
+      <div style={{ height: "100%", width: `${(frame / total) * 100}%`, background: "linear-gradient(90deg, #FFD60A, #E5484D)" }} />
+    </div>
+  );
+};
+
 export const Short: React.FC<Timeline> = (t) => {
   return (
     <AbsoluteFill style={{ background: C.bg, overflow: "hidden" }}>
-      <Background seq={t.seq} />
+      <Background seq={t.seq} theme={t.theme} />
       {t.scenes.map((sc, i) => {
         const Comp = SCENES[sc.type];
         return (
@@ -34,7 +43,8 @@ export const Short: React.FC<Timeline> = (t) => {
           </Sequence>
         );
       })}
-      <Captions scenes={t.scenes} />
+      <Captions scenes={t.scenes} v2={!!t.theme} />
+      {t.theme && <Progress total={t.durationInFrames} />}
     </AbsoluteFill>
   );
 };

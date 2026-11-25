@@ -5,7 +5,7 @@ import type { SceneData } from "../types";
 
 type W = { text: string; s: number; e: number };
 
-export const Captions: React.FC<{ scenes: SceneData[] }> = ({ scenes }) => {
+export const Captions: React.FC<{ scenes: SceneData[]; v2?: boolean }> = ({ scenes, v2 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -48,8 +48,9 @@ export const Captions: React.FC<{ scenes: SceneData[] }> = ({ scenes }) => {
             key={i}
             style={{
               fontFamily: FONT, fontWeight: 900, fontSize: 92, textTransform: "uppercase", lineHeight: 1.15,
-              color: active ? C.yellow : "#fff", WebkitTextStroke: `14px ${C.ink}`, paintOrder: "stroke fill",
+              color: active ? (v2 ? C.ink : C.yellow) : "#fff", WebkitTextStroke: active && v2 ? "0px transparent" : `14px ${C.ink}`, paintOrder: "stroke fill",
               scale: active ? "1.08" : "1", display: "inline-block",
+              ...(active && v2 ? { background: C.yellow, borderRadius: 22, padding: "0 18px", border: `7px solid ${C.ink}`, boxShadow: `0 8px 0 ${C.ink}`, rotate: "-2deg" } : {}),
             }}
           >
             {w.text.replace(/[.,]$/, "")}

@@ -82,7 +82,7 @@ def main(story_path):
     total = scenes_out[-1]["from"] + scenes_out[-1]["durationInFrames"] + FPS  # 1s tail
     base = os.path.basename(story_path)
     seq = int(base.split("-")[0]) if base.split("-")[0].isdigit() else 1
-    gen = {"id": sid, "seq": seq, "title": story.get("title", sid), "fps": FPS, "characters": story.get("characters", {}),
+    gen = {"id": sid, "seq": seq, "theme": story.get("theme"), "title": story.get("title", sid), "fps": FPS, "characters": story.get("characters", {}),
            "durationInFrames": total, "scenes": scenes_out}
     gdir = os.path.join(ROOT, "src", "generated")
     os.makedirs(gdir, exist_ok=True)

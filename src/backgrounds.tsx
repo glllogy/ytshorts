@@ -66,9 +66,48 @@ const Dots: React.FC = () => {
   );
 };
 
-const THEMES = [Cream, Grid, Dots];
 
-export const Background: React.FC<{ seq?: number }> = ({ seq = 1 }) => {
-  const Comp = THEMES[Math.floor((seq - 1) / 3) % THEMES.length];
+// Sunset: warm gradient, soft glow blobs, diagonal light rays, drifting coins
+const Sunset: React.FC = () => {
+  const frame = useCurrentFrame();
+  return (
+    <AbsoluteFill style={{ background: "linear-gradient(170deg, #FFF0DC 0%, #FFE0D2 45%, #FFD3E2 100%)" }}>
+      <svg width={1080} height={1920} style={{ position: "absolute", inset: 0 }}>
+        <defs>
+          <radialGradient id="glowA" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#FFFFFF" stopOpacity={0.9} />
+            <stop offset="100%" stopColor="#FFFFFF" stopOpacity={0} />
+          </radialGradient>
+          <radialGradient id="glowB" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#FFB4C8" stopOpacity={0.55} />
+            <stop offset="100%" stopColor="#FFB4C8" stopOpacity={0} />
+          </radialGradient>
+        </defs>
+        {Array.from({ length: 7 }).map((_, i) => (
+          <rect key={i} x={-600 + i * 300 + ((frame * 0.8) % 300)} y={-200} width={90} height={2600} fill="#FFFFFF" opacity={0.18} transform="rotate(24 540 960)" />
+        ))}
+        <circle cx={220 + Math.sin(frame / 50) * 40} cy={480} r={420} fill="url(#glowA)" />
+        <circle cx={900 + Math.cos(frame / 60) * 40} cy={1250} r={480} fill="url(#glowB)" />
+        <circle cx={540} cy={1800} r={520} fill="url(#glowA)" />
+        {[[120, 0], [900, 1], [300, 2], [760, 3], [1000, 4]].map(([x, i]) => {
+          const y = 2000 - ((frame * (1.2 + (i % 3) * 0.3) + i * 420) % 2200);
+          return (
+            <g key={i} transform={`translate(${x + Math.sin((frame + i * 40) / 30) * 20},${y})`} opacity={0.35}>
+              <circle r={26} fill="#FFD60A" stroke="#E0A800" strokeWidth={4} />
+              <text y={10} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={30} fill="#B8860B">$</text>
+            </g>
+          );
+        })}
+      </svg>
+      <AbsoluteFill style={{ boxShadow: "inset 0 0 220px rgba(120,40,60,0.18)" }} />
+    </AbsoluteFill>
+  );
+};
+
+const THEMES = [Cream, Grid, Dots];
+const NAMED: Record<string, React.FC> = { cream: Cream, grid: Grid, dots: Dots, sunset: Sunset };
+
+export const Background: React.FC<{ seq?: number; theme?: string | null }> = ({ seq = 1, theme }) => {
+  const Comp = (theme && NAMED[theme]) || THEMES[Math.floor((seq - 1) / 3) % THEMES.length];
   return <Comp />;
 };

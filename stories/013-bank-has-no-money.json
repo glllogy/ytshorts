@@ -1,0 +1,53 @@
+{
+  "id": "bank-has-no-money",
+  "title": "Your money isn't actually in your bank",
+  "voice": "nPczCjzI2devNBz1zQrb",
+  "theme": "sunset",
+  "characters": {
+    "mike": { "name": "MIKE", "color": "#E5484D" },
+    "jake": { "name": "JAKE", "color": "#2E8B57" }
+  },
+  "scenes": [
+    {
+      "type": "bankHook",
+      "text": "Your money isn't actually in your bank. Here's what really happens to it.",
+      "props": { "line1": "YOUR MONEY", "line2": "ISN'T IN THE BANK", "emptyWord": "isn't", "whatWord": "really" }
+    },
+    {
+      "type": "lendChain",
+      "text": "Mike deposits $1,000. The bank keeps a little, say 10%, and lends $900 to Jake for a car. The dealer deposits that $900... and the bank lends most of it out again.",
+      "props": { "steps": [
+        { "word": "deposits", "label": "MIKE DEPOSITS", "amount": "$1,000", "color": "#E5484D", "acc": 1000 },
+        { "word": "keeps", "label": "BANK KEEPS", "amount": "$100", "color": "#1B1B1F" },
+        { "word": "lends", "label": "LOAN TO JAKE", "amount": "$900", "color": "#2E8B57" },
+        { "word": "dealer", "label": "DEALER DEPOSITS", "amount": "$900", "color": "#3B82F6", "acc": 1900 },
+        { "word": "again", "label": "LOANED AGAIN", "amount": "$810", "color": "#2E8B57" }
+      ] }
+    },
+    {
+      "type": "breakdown",
+      "text": "After just three rounds, accounts show $2,710. But there's still only $1,000 of real cash.",
+      "props": { "aWord": "accounts", "bWord": "$2,710", "parts": [ { "label": "REAL CASH", "value": 1000, "color": "#22C55E" }, { "label": "CREATED BY LOANS", "value": 1710, "color": "#3B82F6" } ] }
+    },
+    {
+      "type": "bankRun",
+      "text": "So what if everyone wants their money at once? In March 2023, Silicon Valley Bank customers tried to pull out $42 billion in a single day. The next morning, the bank was shut down.",
+      "props": { "dateWord": "march", "date": "MARCH 2023", "amountWord": "$42", "dayWord": "single", "shutWord": "shut", "name": "SILICON VALLEY BANK" }
+    },
+    {
+      "type": "formula",
+      "text": "That's why you need this number. FDIC insurance covers $250,000 per person, per bank, per account type.",
+      "props": { "title": "SAVE THIS", "save": true, "parts": [ ["$250,000", "$250,000"], ["PER PERSON", "person"], ["PER BANK", "bank", 0], ["PER ACCOUNT TYPE", "type"] ], "result": "INSURED", "resultWord": "type", "note": "CHECK FDIC.GOV" }
+    },
+    {
+      "type": "lesson",
+      "text": "Jake's rule: more than $250,000 saved? Split it across banks.",
+      "props": { "who": "jake", "line1": "OVER $250K?", "line2": "SPLIT IT UP", "switchWord": "split", "vs": "wallet" }
+    },
+    {
+      "type": "cta",
+      "text": "Did you know your bank works like this? Tell me in the comments.",
+      "props": { "who": "jake", "button": "DID YOU KNOW?", "disclaimer": "Simplified example. US reserve requirement: 0% since 2020. Not financial advice." }
+    }
+  ]
+}
